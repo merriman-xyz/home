@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brian Merriman</title>
+<style>
+/* keaiui tokens — tanji systems house style, light only by design */
+:root{
+  --page:#fdfcfa; --raised:#f2efea; --sunken:#e8e4dc;
+  --btn:#e7e3da; --btn-hover:#d3cfc4;
+  --border:#d3cfc4; --border-strong:#8c8780;
+  --ink:#1c1a16; --ink-strong:#141311; --muted:#615d56;
+  --accent:#217346; --accent-hover:#1b5f3a;
+  --accent-soft:color-mix(in srgb, var(--accent) 14%, var(--btn));
+  --accent-soft-border:color-mix(in srgb, var(--accent) 55%, var(--border-strong));
+  --accent-tint:rgba(33,115,70,.13);
+  --sans:"IBM Plex Sans",system-ui,sans-serif;
+  --serif:"IBM Plex Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --bevel-raised:inset 0 1px 0 rgba(255,255,255,.75), 0 1px 1px rgba(0,0,0,.18);
+  --motion-fast:80ms;
+}
+*{box-sizing:border-box}
+::selection{background:var(--accent-tint)}
+body{background:var(--page);color:var(--ink);margin:0;padding:24px 16px 40px;
+  font:13px/1.5 var(--sans)}
+.wrap{max-width:720px;margin:0 auto}
+h1{font:600 25px/1.2 var(--serif);font-variant:small-caps;letter-spacing:.06em;
+  color:var(--ink-strong);margin:0}
+h1 .mark{color:var(--accent);font-variant:normal;margin-right:6px}
+h1 .tag{display:inline-block;text-decoration:none;cursor:pointer;background:var(--accent-soft);
+  color:var(--accent-hover);border:1px solid var(--accent-soft-border);
+  font:700 9px/1.1 var(--sans);letter-spacing:.06em;text-transform:uppercase;
+  font-variant:normal;padding:3px 7px;border-radius:2px;vertical-align:6px;margin-left:10px;
+  transition:border-color var(--motion-fast) ease-out}
+h1 .tag:hover{border-color:var(--accent)}
+h1 .tag:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+p.sub{font-size:11px;color:var(--muted);margin:2px 0 12px;letter-spacing:.04em}
+p.looking{font-size:12.5px;margin:0 0 16px;color:var(--ink)}
+p.looking b{color:var(--ink-strong)}
+.plaques{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:0 0 4px}
+@media (max-width:640px){.plaques{grid-template-columns:1fr}}
+.plaque{display:block;text-decoration:none;color:inherit;background:var(--raised);
+  border:1px solid var(--border-strong);border-top:2px solid var(--accent);border-radius:6px;
+  padding:10px 14px;box-shadow:var(--bevel-raised), 0 2px 5px rgba(28,26,22,.12);
+  transition:background var(--motion-fast) ease-out}
+a.plaque:hover{background:var(--btn)}
+a.plaque:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.plaque .lbl{font:700 9px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.plaque .big{font:600 19px/1.25 var(--serif);color:var(--ink-strong);margin:3px 0 1px}
+.plaque .big .go{color:var(--accent);font-size:13px;vertical-align:2px}
+.plaque .sub{font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+h3.view{font:700 10px/1.1 var(--sans);letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);margin:18px 0 6px}
+.card{background:var(--raised);border:1px solid var(--border);border-radius:6px;
+  padding:10px 14px;box-shadow:var(--bevel-raised)}
+.card + .card{margin-top:10px}
+.job{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 5px}
+.job h4{font:600 14px/1.2 var(--serif);font-variant:small-caps;letter-spacing:.05em;
+  color:var(--ink-strong);margin:0}
+.job .title{font:600 10px/1.2 var(--sans);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.job .when{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;margin-left:auto}
+.card ul{margin:0;padding-left:17px}
+.card ul li{margin:0 0 3px}
+.card ul li:last-child{margin-bottom:0}
+.card ul b{color:var(--ink-strong)}
+a.txt{color:var(--accent);text-decoration:none;font-weight:600}
+a.txt::after{content:"↗";font-size:10px;margin-left:2px;vertical-align:1px}
+a.txt:hover{color:var(--accent-hover);text-decoration:underline}
+a.txt:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.skills dl{display:grid;grid-template-columns:max-content 1fr;gap:3px 14px;margin:0}
+.skills dt{font:700 10px/1.6 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.skills dd{margin:0}
+.edu{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+button.kbtn{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:6px;
+  cursor:pointer;font:600 12px/1 var(--sans);color:var(--ink-strong);
+  background:var(--btn);border:1px solid var(--border-strong);border-radius:4px;
+  padding:5px 10px;box-shadow:var(--bevel-raised);vertical-align:-5px;
+  transition:background var(--motion-fast) ease-out, box-shadow var(--motion-fast) ease-out}
+button.kbtn:hover{background:var(--btn-hover);box-shadow:var(--bevel-raised-hover)}
+button.kbtn:active{background:var(--btn-active);box-shadow:none}
+button.kbtn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+button.kbtn .ic{color:var(--accent);font-size:13px;line-height:1}
+button.copy{all:unset;box-sizing:border-box;cursor:pointer;font-weight:inherit;color:inherit}
+button.copy .ic{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+  margin-left:5px;font-size:13px;line-height:1;color:var(--accent);border:1px solid var(--border);border-radius:2px;
+  background:var(--btn);vertical-align:middle;position:relative;top:-1px;
+  transition:background var(--motion-fast) ease-out}
+button.copy:hover .ic{background:var(--btn-hover);color:var(--accent-hover)}
+button.copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+footer{margin-top:18px;font-size:11px;color:var(--muted)}
+@media (max-width:480px){body{padding:16px 10px 36px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1><span class="mark">▙</span>Brian Merriman<a class="tag" href="https://tanji.systems/">Tanji Systems</a></h1>
+<p class="sub">frontend engineer · new york, ny · <button class="copy" title="click copies b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button> · <a class="txt" href="https://github.com/merriman-xyz">github</a> · <a class="txt" href="resume.html">full résumé</a></p>
+<p class="looking"><b>Looking to join a team</b> — frontend, data-heavy UIs, AI · say hi · <button class="kbtn copy" title="copies the address">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button></p>
+
+<div class="plaques">
+<a class="plaque" href="https://ingrid.tanji.systems">
+  <span class="lbl">Now building</span>
+  <div class="big">Ingrid <span class="go">↗</span></div>
+  <div class="sub">local-first grid workspace · paid sync live</div>
+</a>
+<a class="plaque" href="https://showdown.tanji.systems">
+  <span class="lbl">Just shipped</span>
+  <div class="big">Showdown Elo <span class="go">↗</span></div>
+  <div class="sub">MLB player Elo · 8M+ pitches · nightly</div>
+</a>
+<div class="plaque">
+  <span class="lbl">Track record</span>
+  <div class="big">100M+ rows</div>
+  <div class="sub">JPMorgan multi-grid data workspace</div>
+</div>
+</div>
+
+<h3 class="view">Experience</h3>
+<div class="card">
+<div class="job"><h4>Tanji Systems</h4><span class="title">Founder</span><span class="when">New York · Jun 2026 – present</span></div>
+<ul>
+<li><b>Ingrid</b> — local-first hierarchical grid workspace; paid cloud sync in production</li>
+<li><b>Showdown Elo</b> — self-updating MLB player ratings from 8M+ Statcast pitches</li>
+<li>AI-assisted end to end — agent workflows, constrained UI generation, tests as gates</li>
+</ul>
+</div>
+<div class="card">
+<div class="job"><h4>JPMorgan Chase</h4><span class="title">Software Engineer, Associate → VP (Feb 2025)</span><span class="when">New York · Jan 2023 – May 2026</span></div>
+<ul>
+<li>Multi-grid data workspace — users explore, join, and pivot across 100M+ row datasets</li>
+<li>Virtualized scrolling, client-side caching, state management, live WebSocket updates</li>
+<li>Primary frontend engineer during the application&rsquo;s first year</li>
+<li>Evaluated LLM workflows; built the widget constraints that made generated UI reliable</li>
+</ul>
+</div>
+<div class="card">
+<div class="job"><h4>OKG Tech</h4><span class="title">Software Engineer</span><span class="when">New York · Mar 2022 – Dec 2022</span></div>
+<ul>
+<li>Shipped an updated bus-ticketing system (React, Node.js)</li>
+<li>Built scheduling, vaccination, and clinical workflow features on eClinicalWorks</li>
+</ul>
+</div>
+<div class="card">
+<div class="job"><h4>Yunshang Tea</h4><span class="title">Co-Founder</span><span class="when">Zhejiang, China · Sep 2015 – Nov 2021</span></div>
+<ul>
+<li>Co-founded and ran a specialty tea business; built internal database workflows for inventory, sales, and operations</li>
+</ul>
+</div>
+
+<h3 class="view">Skills</h3>
+<div class="card skills"><dl>
+<dt>Languages</dt><dd>JavaScript, HTML, CSS, SQL</dd>
+<dt>Frontend</dt><dd>React, vanilla JavaScript, data virtualization, client-side caching, WebSockets, IndexedDB, Dexie, state management, local-first sync</dd>
+<dt>Tools</dt><dd>Node.js, SQLite, API integration, Git, AI-assisted development, agent workflows, constrained UI generation</dd>
+</dl></div>
+
+<h3 class="view">Education</h3>
+<div class="card">
+<div class="job"><h4>Manhattan College</h4><span class="title">BA, Computer Science</span><span class="when">Bronx, NY · 2011</span></div>
+<ul>
+<li>magna cum laude · Phi Beta Kappa</li>
+</ul>
+</div>
+
+<footer>
+<a class="txt" href="resume.html">full résumé</a> ·
+<button class="copy" title="click copies b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button> ·
+<a class="txt" href="https://github.com/merriman-xyz">github</a> ·
+a <a class="txt" href="https://tanji.systems/">Tanji Systems</a> person
+</footer>
+</div>
+<script>
+document.querySelectorAll('button.copy').forEach(b => {
+  b.addEventListener('click', () => {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText('b@merriman.xyz').then(() => {
+      const ic = b.querySelector('.ic');
+      const old = ic.textContent;
+      ic.textContent = '✓';
+      setTimeout(() => { ic.textContent = old; }, 900);
+    }).catch(() => {});
+  });
+});
+</script>
+</body>
+</html>

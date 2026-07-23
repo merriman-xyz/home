@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brian Merriman — Résumé</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{background:#fff;color:#1a1a1a;margin:0;
+  font:13.5px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2.2rem 1.6rem}
+header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem}
+h1{font:600 24px/1.1 Georgia,"Times New Roman",serif;letter-spacing:.01em;margin:0}
+.contact{font-size:12px;color:#444;text-align:right}
+.contact a{color:inherit;text-decoration:none}
+.contact a:hover{text-decoration:underline}
+p.summary{margin:10px 0 0;font-size:13px;color:#333;border-top:1px solid #1a1a1a;padding-top:10px}
+h2{font:700 11px/1 -apple-system,"Segoe UI",Helvetica,sans-serif;text-transform:uppercase;
+  letter-spacing:.09em;color:#1a1a1a;border-bottom:1px solid #999;
+  padding-bottom:4px;margin:20px 0 10px}
+.job{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-top:12px}
+.job:first-of-type{margin-top:0}
+.role{font-weight:700}
+.role .title{font-weight:400;color:#333}
+.when{font-size:12px;color:#666;white-space:nowrap;font-variant-numeric:tabular-nums}
+ul{margin:4px 0 0;padding-left:15px;list-style:none}
+li{margin:0 0 3px;color:#222;position:relative}
+li::before{content:"\2022";position:absolute;left:-11px;color:#555}
+li a{color:inherit}
+.skills dl{display:grid;grid-template-columns:max-content 1fr;gap:3px 14px;margin:0}
+.skills dt{font-weight:700;font-size:12px}
+.skills dd{margin:0;font-size:12.5px;color:#333}
+.edu{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media print{
+  body{font-size:12px}
+  main{padding:0;max-width:none}
+  a{text-decoration:none!important}
+  @page{margin:14mm 16mm}
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Brian Merriman</h1>
+  <div class="contact">
+    New York, NY · <a href="mailto:b@merriman.xyz">b@merriman.xyz</a><br>
+    <a href="https://merriman.xyz">merriman.xyz</a> · <a href="https://github.com/merriman-xyz">github.com/merriman-xyz</a>
+  </div>
+</header>
+<p class="summary">Frontend engineer focused on high-performance, data-heavy interfaces and
+AI-assisted software development. Built multi-grid analytical tools for 100M+ row datasets
+at JPMorgan Chase; now developing local-first products at Tanji Systems.</p>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <span class="role"><a href="https://tanji.systems/" style="color:inherit">Tanji Systems</a> · <span class="title">Founder</span></span>
+  <span class="when">New York · Jun 2026 – present</span>
+</div>
+<ul>
+<li>Building <a href="https://ingrid.tanji.systems">Ingrid</a>, a local-first hierarchical grid workspace for structured notes, projects, and information.</li>
+<li>Built <a href="https://showdown.tanji.systems">Showdown Elo</a>, a self-updating MLB player-rating site trained on 8M+ Statcast pitches and validated against ~35,000 betting-market props; rebuilds nightly.</li>
+<li>Developing independent products with JavaScript, IndexedDB, and local-first sync, using agent workflows, constrained UI generation, and automated testing.</li>
+</ul>
+
+<div class="job">
+  <span class="role">JPMorgan Chase · <span class="title">Software Engineer, Associate → VP (Feb 2025)</span></span>
+  <span class="when">New York · Jan 2023 – May 2026</span>
+</div>
+<ul>
+<li>Built a multi-grid data workspace on a small, fast-moving team.</li>
+<li>Enabled users to explore, join, pivot, and retrieve data across 100M+ row datasets.</li>
+<li>Implemented virtualized scrolling, client-side caching, state management, and real-time WebSocket updates across multiple live grids.</li>
+<li>Served as the primary frontend engineer during the application&rsquo;s first year.</li>
+<li>Evaluated LLM workflows for legacy modernization, agent-based development, and constrained UI generation.</li>
+<li>Created reusable skills, project instructions, and widget constraints to improve the reliability of AI-generated code.</li>
+</ul>
+
+<div class="job">
+  <span class="role">OKG Tech · <span class="title">Software Engineer</span></span>
+  <span class="when">New York · Mar 2022 – Dec 2022</span>
+</div>
+<ul>
+<li>Shipped an updated bus-ticketing system using React and Node.js as the primary implementation engineer on a four-person team.</li>
+<li>Developed scheduling, vaccination, appointment-reminder, and clinical workflow features on top of eClinicalWorks.</li>
+<li>Integrated application features with clinical data and existing operational systems.</li>
+</ul>
+
+<div class="job">
+  <span class="role">Yunshang Tea · <span class="title">Co-Founder</span></span>
+  <span class="when">Zhejiang, China · Sep 2015 – Nov 2021</span>
+</div>
+<ul>
+<li>Co-founded and operated a specialty tea business serving retail and wholesale customers.</li>
+<li>Built internal database workflows for inventory, sales, and operations.</li>
+</ul>
+
+<h2>Skills</h2>
+<div class="skills">
+<dl>
+<dt>Languages</dt><dd>JavaScript, HTML, CSS, SQL</dd>
+<dt>Frontend</dt><dd>React, vanilla JavaScript, data virtualization, client-side caching, WebSockets, IndexedDB, Dexie, state management, local-first sync</dd>
+<dt>Backend &amp; Tools</dt><dd>Node.js, SQLite, Git, AI-assisted development, agent workflows, constrained UI generation</dd>
+</dl>
+</div>
+
+<h2>Education</h2>
+<div class="job">
+  <span class="role">Manhattan College · <span class="title">BA, Computer Science</span></span>
+  <span class="when">Bronx, NY · 2011</span>
+</div>
+<ul>
+<li>magna cum laude · Phi Beta Kappa</li>
+</ul>
+</main>
+</body>
+</html>
