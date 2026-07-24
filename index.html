@@ -10,7 +10,7 @@
   --page:#fdfcfa; --raised:#f2efea; --sunken:#e8e4dc;
   --btn:#e7e3da; --btn-hover:#d3cfc4;
   --border:#d3cfc4; --border-strong:#8c8780;
-  --ink:#1c1a16; --ink-strong:#141311; --muted:#615d56;
+  --ink:#1c1a16; --ink-strong:#141311; --muted:#4a463f;
   --accent:#217346; --accent-hover:#1b5f3a;
   --accent-soft:color-mix(in srgb, var(--accent) 14%, var(--btn));
   --accent-soft-border:color-mix(in srgb, var(--accent) 55%, var(--border-strong));
@@ -34,7 +34,7 @@ h1 .tag{display:inline-block;text-decoration:none;cursor:pointer;background:var(
   font-variant:normal;padding:3px 7px;border-radius:2px;vertical-align:6px;margin-left:10px;
   transition:border-color var(--motion-fast) ease-out}
 h1 .tag:hover{border-color:var(--accent)}
-h1 .tag:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+h1 .tag:focus-visible{outline:1px solid var(--accent);outline-offset:1px}
 p.sub{font-size:11px;color:var(--muted);margin:2px 0 12px;letter-spacing:.04em}
 p.looking{font-size:12.5px;margin:0 0 16px;color:var(--ink)}
 p.looking b{color:var(--ink-strong)}
@@ -45,7 +45,7 @@ p.looking b{color:var(--ink-strong)}
   padding:10px 14px;box-shadow:var(--bevel-raised), 0 2px 5px rgba(28,26,22,.12);
   transition:background var(--motion-fast) ease-out}
 a.plaque:hover{background:var(--btn)}
-a.plaque:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+a.plaque:focus-visible{outline:1px solid var(--accent);outline-offset:1px}
 .plaque .lbl{font:700 9px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .plaque .big{font:600 19px/1.25 var(--serif);color:var(--ink-strong);margin:3px 0 1px}
 .plaque .big .go{color:var(--accent);font-size:13px;vertical-align:2px}
@@ -65,9 +65,9 @@ h3.view{font:700 10px/1.1 var(--sans);letter-spacing:.06em;text-transform:upperc
 .card ul li:last-child{margin-bottom:0}
 .card ul b{color:var(--ink-strong)}
 a.txt{color:var(--accent);text-decoration:none;font-weight:600}
-a.txt::after{content:"↗";font-size:10px;margin-left:2px;vertical-align:1px}
+a.txt::after{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 12 12' fill='none' stroke='%23217346' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.5 2.5H2.5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.5'/%3E%3Cpath d='M7.5 1.5h3v3'/%3E%3Cpath d='M10.5 1.5 5.75 6.25'/%3E%3C/svg%3E");margin-left:3px;vertical-align:0px}
 a.txt:hover{color:var(--accent-hover);text-decoration:underline}
-a.txt:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+a.txt:focus-visible{outline:1px solid var(--accent);outline-offset:1px}
 .skills dl{display:grid;grid-template-columns:max-content 1fr;gap:3px 14px;margin:0}
 .skills dt{font:700 10px/1.6 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .skills dd{margin:0}
@@ -79,7 +79,7 @@ button.kbtn{all:unset;box-sizing:border-box;display:inline-flex;align-items:cent
   transition:background var(--motion-fast) ease-out, box-shadow var(--motion-fast) ease-out}
 button.kbtn:hover{background:var(--btn-hover);box-shadow:var(--bevel-raised-hover)}
 button.kbtn:active{background:var(--btn-active);box-shadow:none}
-button.kbtn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+button.kbtn:focus-visible{outline:1px solid var(--accent);outline-offset:1px}
 button.kbtn .ic{color:var(--accent);font-size:13px;line-height:1}
 button.copy{all:unset;box-sizing:border-box;cursor:pointer;font-weight:inherit;color:inherit}
 button.copy .ic{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
@@ -87,7 +87,7 @@ button.copy .ic{display:inline-flex;align-items:center;justify-content:center;wi
   background:var(--btn);vertical-align:middle;position:relative;top:-1px;
   transition:background var(--motion-fast) ease-out}
 button.copy:hover .ic{background:var(--btn-hover);color:var(--accent-hover)}
-button.copy:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+button.copy:focus-visible{outline:1px solid var(--accent);outline-offset:1px}
 footer{margin-top:18px;font-size:11px;color:var(--muted)}
 @media (max-width:480px){body{padding:16px 10px 36px}}
 </style>
@@ -101,12 +101,12 @@ footer{margin-top:18px;font-size:11px;color:var(--muted)}
 <div class="plaques">
 <a class="plaque" href="https://ingrid.tanji.systems">
   <span class="lbl">Now building</span>
-  <div class="big">Ingrid <span class="go">↗</span></div>
+  <div class="big">Ingrid <span class="go"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 2.5H2.5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.5"/><path d="M7.5 1.5h3v3"/><path d="M10.5 1.5 5.75 6.25"/></svg></span></div>
   <div class="sub">local-first grid workspace · paid sync live</div>
 </a>
 <a class="plaque" href="https://showdown.tanji.systems">
   <span class="lbl">Just shipped</span>
-  <div class="big">Showdown Elo <span class="go">↗</span></div>
+  <div class="big">Showdown Elo <span class="go"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 2.5H2.5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.5"/><path d="M7.5 1.5h3v3"/><path d="M10.5 1.5 5.75 6.25"/></svg></span></div>
   <div class="sub">MLB player Elo · 8M+ pitches · nightly</div>
 </a>
 <div class="plaque">
