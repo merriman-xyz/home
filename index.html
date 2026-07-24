@@ -75,15 +75,6 @@ a.txt:focus-visible{outline:1px solid var(--accent);outline-offset:1px}
 .skills dt{font:700 10px/1.6 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .skills dd{margin:0}
 .edu{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
-button.kbtn, a.kbtn{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:6px;
-  cursor:pointer;font:600 12px/1 var(--sans);color:var(--ink-strong);
-  background:var(--btn);border:1px solid var(--border-strong);border-radius:4px;
-  padding:5px 10px;box-shadow:var(--bevel-raised);vertical-align:-5px;margin-top:6px;
-  transition:background var(--motion-fast) ease-out, box-shadow var(--motion-fast) ease-out}
-button.kbtn:hover, a.kbtn:hover{background:var(--btn-hover);box-shadow:var(--bevel-raised-hover)}
-button.kbtn:active, a.kbtn:active{background:var(--btn-active);box-shadow:none}
-button.kbtn:focus-visible, a.kbtn:focus-visible{outline:1px solid var(--accent);outline-offset:1px}
-button.kbtn .ic, a.kbtn .ic{color:var(--accent);font-size:13px;line-height:1}
 button.copy{all:unset;box-sizing:border-box;cursor:pointer;font-weight:inherit;color:inherit}
 button.copy .ic{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
   margin-left:5px;font-size:13px;line-height:1;color:var(--accent);border:1px solid var(--border);border-radius:2px;
@@ -99,8 +90,7 @@ footer{margin-top:18px;font-size:11px;color:var(--muted)}
 <div class="wrap">
 <h1><span class="mark">▙</span>Brian Merriman<a class="tag" href="https://tanji.systems/">Tanji Systems</a></h1>
 <p class="sub">senior frontend engineer · new york, ny · <button class="copy" title="click copies b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button> · <a class="txt" href="https://github.com/merriman-xyz">github</a> · <a class="txt" href="resume.html">full résumé</a></p>
-<p class="looking"><b>Open to full-time roles</b> — senior frontend / product engineer, complex-data UIs · available now<br>
-<a class="kbtn" href="mailto:b@merriman.xyz">email Brian about a role<span class="ic" aria-hidden="true">✉</span></a> <a class="kbtn" href="resume.pdf" download="Brian_Merriman_Resume.pdf">résumé PDF<span class="ic" aria-hidden="true">⇩</span></a></p>
+<p class="looking"><b>Open to full-time roles</b> — senior frontend / product engineer, complex-data UIs · available now · <button class="copy" title="click copies b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button> · <a class="txt" href="resume.pdf" download="Brian_Merriman_Resume.pdf">résumé PDF</a></p>
 
 <div class="plaques">
 <a class="plaque" href="https://ingrid.tanji.systems">
@@ -169,7 +159,7 @@ footer{margin-top:18px;font-size:11px;color:var(--muted)}
 </div>
 
 <footer>
-open to full-time roles · <a class="txt" href="mailto:b@merriman.xyz">email Brian</a> ·
+open to full-time roles · <button class="copy" title="click copies b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button> ·
 <a class="txt" href="resume.pdf" download="Brian_Merriman_Resume.pdf">résumé PDF</a> ·
 <a class="txt" href="resume.html">full résumé</a> ·
 <a class="txt" href="https://github.com/merriman-xyz">github</a>
