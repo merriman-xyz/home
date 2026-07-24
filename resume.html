@@ -10,7 +10,8 @@
 body{background:#fff;color:#1a1a1a;margin:0;
   font:13.5px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
 main{max-width:46rem;margin:0 auto;padding:2.2rem 1.6rem}
-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem}
+header{display:grid;grid-template-columns:1fr auto;align-items:baseline;column-gap:1rem}
+.target{grid-column:1;font:600 12px/1.3 -apple-system,"Segoe UI",Helvetica,sans-serif;color:#333;margin-top:2px}
 h1{font:600 24px/1.1 Georgia,"Times New Roman",serif;letter-spacing:.01em;margin:0}
 .contact{font-size:12px;color:#444;text-align:right}
 .contact a{color:inherit;text-decoration:none}
@@ -44,38 +45,43 @@ li a{color:inherit}
 <main>
 <header>
   <h1>Brian Merriman</h1>
+  <div class="target">Senior Frontend Engineer — Complex Data &amp; Real-Time Web Applications</div>
   <div class="contact">
     New York, NY · <a href="mailto:b@merriman.xyz">b@merriman.xyz</a><br>
     <a href="https://merriman.xyz">merriman.xyz</a> · <a href="https://github.com/merriman-xyz">github.com/merriman-xyz</a>
   </div>
 </header>
-<p class="summary">Frontend engineer focused on high-performance, data-heavy interfaces and
-AI-assisted software development. Built multi-grid analytical tools for 100M+ row datasets
-at JPMorgan Chase; now developing local-first products at Tanji Systems.</p>
+<p class="summary">Senior frontend engineer building high-performance React and JavaScript
+interfaces for complex data. At JPMorgan Chase, served as primary frontend engineer for a
+real-time, multi-grid analytics workspace over datasets containing 100M+ rows and was promoted
+from Associate to Vice President. Now shipping local-first products with production sync,
+subscriptions, and automated quality gates.</p>
 
 <h2>Experience</h2>
 
 <div class="job">
-  <span class="role"><a href="https://tanji.systems/" style="color:inherit">Tanji Systems</a> · <span class="title">Founder</span></span>
+  <span class="role"><a href="https://tanji.systems/" style="color:inherit">Tanji Systems</a> · <span class="title">Independent Product Engineer</span></span>
   <span class="when">New York · Jun 2026 – present</span>
 </div>
 <ul>
-<li>Building <a href="https://ingrid.tanji.systems">Ingrid</a>, a local-first hierarchical grid workspace for structured notes, projects, and information.</li>
-<li>Built <a href="https://showdown.tanji.systems">Showdown Elo</a>, a self-updating MLB player-rating site trained on 8M+ Statcast pitches and validated against ~35,000 betting-market props; rebuilds nightly.</li>
-<li>Developing independent products with JavaScript, IndexedDB, and local-first sync, using agent workflows, constrained UI generation, and automated testing.</li>
+<li>Shipped <a href="https://ingrid.tanji.systems">Ingrid</a>, a local-first hierarchical grid workspace for structured notes and projects, with IndexedDB persistence and paid cloud sync in production.</li>
+<li>Built <a href="https://showdown.tanji.systems">Showdown Elo</a>, a nightly MLB ratings product derived from 8M+ Statcast pitches; benchmarked the underlying models against betting markets and published the negative result.</li>
+<li>Designed and shipped both products end to end — product direction, data modeling, interface, deployment, automated validation — with AI coding agents assisting implementation.</li>
 </ul>
 
 <div class="job">
-  <span class="role">JPMorgan Chase · <span class="title">Software Engineer, Associate → VP (Feb 2025)</span></span>
-  <span class="when">New York · Jan 2023 – May 2026</span>
+  <span class="role">JPMorgan Chase · <span class="title">Software Engineer (Vice President)</span></span>
+  <span class="when">New York · Feb 2025 – May 2026</span>
+</div>
+<div class="job" style="margin-top:2px">
+  <span class="role"><span class="title" style="font-weight:400">Software Engineer (Associate)</span></span>
+  <span class="when">Jan 2023 – Jan 2025</span>
 </div>
 <ul>
-<li>Built a multi-grid data workspace on a small, fast-moving team.</li>
-<li>Enabled users to explore, join, pivot, and retrieve data across 100M+ row datasets.</li>
-<li>Implemented virtualized scrolling, client-side caching, state management, and real-time WebSocket updates across multiple live grids.</li>
-<li>Served as the primary frontend engineer during the application&rsquo;s first year.</li>
-<li>Evaluated LLM workflows for legacy modernization, agent-based development, and constrained UI generation.</li>
-<li>Created reusable skills, project instructions, and widget constraints to improve the reliability of AI-generated code.</li>
+<li>Served as primary frontend engineer during the product&rsquo;s first year, building a multi-grid analytics workspace on a small, fast-moving team.</li>
+<li>Enabled users to explore, join, pivot, and retrieve datasets containing 100M+ rows.</li>
+<li>Kept multiple live grids responsive through virtualized rendering, client-side caching, state management, and real-time WebSocket updates.</li>
+<li>Evaluated LLM workflows for legacy modernization and codified reusable project instructions, skills, and widget constraints for generated UI.</li>
 </ul>
 
 <div class="job">
@@ -100,19 +106,19 @@ at JPMorgan Chase; now developing local-first products at Tanji Systems.</p>
 <h2>Skills</h2>
 <div class="skills">
 <dl>
-<dt>Languages</dt><dd>JavaScript, HTML, CSS, SQL</dd>
-<dt>Frontend</dt><dd>React, vanilla JavaScript, data virtualization, client-side caching, WebSockets, IndexedDB, Dexie, state management, local-first sync</dd>
-<dt>Backend &amp; Tools</dt><dd>Node.js, SQLite, Git, AI-assisted development, agent workflows, constrained UI generation</dd>
+<dt>Languages</dt><dd>JavaScript (ES6+), SQL, HTML, CSS</dd>
+<dt>Frontend</dt><dd>React, vanilla JavaScript architectures, virtualized rendering, frontend performance, state management, WebSockets, IndexedDB, Dexie, local-first sync</dd>
+<dt>Backend &amp; Tools</dt><dd>Node.js, SQLite, REST API integration, Git, automated testing</dd>
 </dl>
 </div>
 
 <h2>Education</h2>
 <div class="job">
-  <span class="role">Manhattan College · <span class="title">BA, Computer Science</span></span>
+  <span class="role">Manhattan College · <span class="title">Bachelor of Arts in Computer Science</span></span>
   <span class="when">Bronx, NY · 2011</span>
 </div>
 <ul>
-<li>magna cum laude · Phi Beta Kappa</li>
+<li>Magna cum laude · Phi Beta Kappa</li>
 </ul>
 </main>
 </body>
