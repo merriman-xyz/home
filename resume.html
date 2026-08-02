@@ -1,124 +1,120 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brian Merriman — Résumé</title>
+<title>Brian Merriman - Resume</title>
 <style>
 :root{color-scheme:light}
 *{box-sizing:border-box}
-body{background:#fff;color:#1a1a1a;margin:0;
-  font:13.5px/1.5 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
-main{max-width:46rem;margin:0 auto;padding:2.2rem 1.6rem}
-header{display:grid;grid-template-columns:1fr auto;align-items:baseline;column-gap:1rem}
-.target{grid-column:1;font:600 12px/1.3 -apple-system,"Segoe UI",Helvetica,sans-serif;color:#333;margin-top:2px}
-h1{font:600 24px/1.1 Georgia,"Times New Roman",serif;letter-spacing:.01em;margin:0}
-.contact{font-size:12px;color:#444;text-align:right}
-.contact a{color:inherit;text-decoration:none}
-.contact a:hover{text-decoration:underline}
-p.summary{margin:10px 0 0;font-size:13px;color:#333;border-top:1px solid #1a1a1a;padding-top:10px}
-h2{font:700 11px/1 -apple-system,"Segoe UI",Helvetica,sans-serif;text-transform:uppercase;
-  letter-spacing:.09em;color:#1a1a1a;border-bottom:1px solid #999;
-  padding-bottom:4px;margin:20px 0 10px}
-.job{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-top:12px}
-.job:first-of-type{margin-top:0}
-.role{font-weight:700}
-.role .title{font-weight:400;color:#333}
-.when{font-size:12px;color:#666;white-space:nowrap;font-variant-numeric:tabular-nums}
-ul{margin:4px 0 0;padding-left:15px;list-style:none}
-li{margin:0 0 3px;color:#222;position:relative}
-li::before{content:"\2022";position:absolute;left:-11px;color:#555}
-li a{color:inherit}
-.skills dl{display:grid;grid-template-columns:max-content 1fr;gap:3px 14px;margin:0}
-.skills dt{font-weight:700;font-size:12px}
-.skills dd{margin:0;font-size:12.5px;color:#333}
-.edu{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+body{background:#fff;color:#111;margin:0;font:14px/1.4 Arial,Helvetica,sans-serif}
+main{max-width:47rem;margin:0 auto;padding:2rem 1.6rem}
+h1{font-size:25px;line-height:1.1;margin:0 0 2px}
+.target{font-size:13px;font-weight:700;margin:0 0 3px}
+.contact{font-size:12px;margin:0}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline}
+h2{font-size:12px;line-height:1.1;text-transform:uppercase;margin:16px 0 5px}
+h3{font-size:13px;line-height:1.25;margin:8px 0 0}
+.meta{font-size:12px;margin:0 0 2px}
+.summary{margin:5px 0 0}
+.skills p{margin:1px 0}
+ul{margin:2px 0 0;padding-left:18px}
+li{margin:0 0 2px;padding-left:1px}
+.education p{margin:0}
 @media print{
-  body{font-size:12px}
-  main{padding:0;max-width:none}
+  body{font-size:10pt;line-height:1.2}
+  main{max-width:none;padding:0}
+  h1{font-size:20pt}
+  .target{font-size:10pt}
+  .contact,.meta{font-size:9pt}
+  h2{font-size:10pt;margin:8pt 0 3pt}
+  h3{font-size:10pt;margin:4.5pt 0 0}
+  .summary{margin-top:4pt}
+  li{margin-bottom:1.2pt}
+  .education{break-inside:avoid}
   a{text-decoration:none!important}
-  @page{margin:14mm 16mm}
+  @page{size:letter;margin:.55in .62in}
 }
 </style>
 </head>
 <body>
 <main>
-<header>
+<div class="contact-info">
   <h1>Brian Merriman</h1>
-  <div class="target">Senior Frontend Engineer — Complex Data Applications</div>
-  <div class="contact">
-    New York, NY · <a href="mailto:b@merriman.xyz">b@merriman.xyz</a><br>
-    <a href="https://merriman.xyz">merriman.xyz</a> · <a href="https://github.com/merriman-xyz">github.com/merriman-xyz</a>
-  </div>
-</header>
-<p class="summary">Senior frontend engineer building high-performance JavaScript interfaces for complex
-data. At JPMorgan Chase, built the frontend of a multi-grid analytics workspace over
-100M+ rows and was promoted to Vice President in two years. Now shipping local-first
-products with production sync, subscriptions, and automated tests that gate every release.
-Seeking a full-time senior frontend role.</p>
-
-<h2>Experience</h2>
-
-<div class="job">
-  <span class="role"><a href="https://tanji.systems/" style="color:inherit">Tanji Systems</a> · <span class="title">Independent Product Engineer</span></span>
-  <span class="when">New York · Jun 2026 – Present</span>
+  <p class="target">Senior Frontend Engineer | Frontend Software Engineer | Complex Data Applications</p>
+  <p class="contact">New York, NY | <a href="mailto:b@merriman.xyz">b@merriman.xyz</a> | <a href="https://merriman.xyz">https://merriman.xyz</a> | <a href="https://github.com/merriman-xyz">https://github.com/merriman-xyz</a></p>
 </div>
-<ul>
-<li>Shipped <a href="https://ingrid.tanji.systems">Ingrid</a>, a local-first hierarchical grid workspace for structured notes and projects, with IndexedDB persistence and paid cloud sync in production.</li>
-<li>Built <a href="https://showdown.tanji.systems">Showdown Elo</a>, a nightly MLB ratings product derived from 8M+ Statcast pitches; benchmarked the underlying models against betting markets and published the negative result.</li>
-<li>Designed and shipped both products end to end — product direction, data modeling, interface, deployment, automated validation — with AI coding agents assisting implementation.</li>
-</ul>
 
-<div class="job">
-  <span class="role">JPMorgan Chase · <span class="title">Lead Software Engineer (Vice President)</span></span>
-  <span class="when">New York · Feb 2025 – May 2026</span>
-</div>
-<div class="job" style="margin-top:2px">
-  <span class="role">JPMorgan Chase · <span class="title" style="font-weight:400">Software Engineer III (Associate)</span></span>
-  <span class="when">Jan 2023 – Jan 2025</span>
-</div>
-<ul>
-<li>Served as primary frontend engineer during the product&rsquo;s first year, building a multi-grid analytics workspace on a small, fast-moving team.</li>
-<li>Enabled users to explore, join, pivot, and retrieve datasets containing 100M+ rows.</li>
-<li>Kept every grid responsive over server-held data: virtualized scrolling fetches only the visible row window over WebSockets, backed by client-side caching and state management.</li>
-<li>Evaluated LLM workflows for legacy modernization and codified reusable project instructions, skills, and widget constraints for generated UI.</li>
-</ul>
+<section>
+<h2>Professional Summary</h2>
+<p class="summary">Senior frontend engineer with 4+ years of experience building and shipping high-performance JavaScript web applications and user interfaces for complex data. Built the frontend of JPMorgan Chase&rsquo;s multi-grid analytics workspace over server-held datasets containing 100M+ rows and earned promotion to Vice President in two years. Expertise in frontend performance, virtualized rendering, WebSockets, state management, local-first architecture, Node.js, SQL, and automated testing. Seeking a full-time Senior Frontend Engineer or Frontend Software Engineer role.</p>
+</section>
 
-<div class="job">
-  <span class="role">OKG Tech · <span class="title">Software Engineer</span></span>
-  <span class="when">New York · Mar 2022 – Dec 2022</span>
-</div>
-<ul>
-<li>Shipped an updated bus-ticketing system using React and Node.js as the primary implementation engineer on a four-person team.</li>
-<li>Developed scheduling, vaccination, appointment-reminder, and clinical workflow features integrated with eClinicalWorks and existing operational systems.</li>
-</ul>
-
-<div class="job">
-  <span class="role">Yunshang Tea · <span class="title">Co-Founder</span></span>
-  <span class="when">Zhejiang, China · Sep 2015 – Nov 2021</span>
-</div>
-<ul>
-<li>Operated a specialty tea business serving retail and wholesale customers.</li>
-<li>Built internal database workflows for inventory, sales, and operations.</li>
-</ul>
-
+<section class="skills">
 <h2>Skills</h2>
-<div class="skills">
-<dl>
-<dt>Languages</dt><dd>JavaScript (ES6+), SQL, HTML, CSS</dd>
-<dt>Frontend</dt><dd>React, vanilla JavaScript, virtualized rendering, frontend performance, state management, WebSockets, IndexedDB, Dexie, local-first sync</dd>
-<dt>Backend &amp; Tools</dt><dd>Node.js, SQLite, REST API integration, Git, automated testing</dd>
-</dl>
-</div>
+<p><strong>Programming:</strong> JavaScript (ES6+), SQL, HTML5, CSS3</p>
+<p><strong>Frontend:</strong> React, vanilla JavaScript, data visualization, frontend architecture, virtualized rendering, web performance optimization, state management, client-side caching</p>
+<p><strong>Data and Backend:</strong> Node.js, SQLite, IndexedDB, Dexie, REST API integration, WebSockets, local-first synchronization, data modeling</p>
+<p><strong>Engineering:</strong> Git, automated testing, unit testing, integration testing, end-to-end testing, deployment</p>
+</section>
 
-<h2>Education</h2>
-<div class="job">
-  <span class="role">Manhattan College · <span class="title">Bachelor of Arts in Computer Science</span></span>
-  <span class="when">Bronx, NY · 2011</span>
-</div>
+<section>
+<h2>Work Experience</h2>
+
+<article>
+<h3>Tanji Systems | Independent Product Engineer</h3>
+<p class="meta">New York, NY | June 2026 - Present</p>
 <ul>
-<li>Magna cum laude · Phi Beta Kappa</li>
+<li>Shipped <a href="https://ingrid.tanji.systems">Ingrid</a>, a local-first hierarchical grid application for structured notes and projects, using JavaScript, IndexedDB, and Dexie for client-side persistence plus production cloud synchronization and subscription billing.</li>
+<li>Built <a href="https://showdown.tanji.systems">Showdown Elo</a>, an automated nightly Major League Baseball (MLB) ratings and data visualization product derived from 8M+ Statcast pitches; benchmarked rating models against betting markets and published the negative result.</li>
+<li>Owned end-to-end product engineering across product direction, frontend architecture, data modeling, user interface (UI) development, deployment, and automated testing.</li>
 </ul>
+</article>
+
+<article>
+<h3>JPMorgan Chase | Lead Software Engineer (Vice President)</h3>
+<p class="meta">New York, NY | February 2025 - May 2026</p>
+<ul>
+<li>Promoted from Software Engineer III (Associate) to Lead Software Engineer (Vice President) in two years.</li>
+<li>Evaluated large language model (LLM) workflows for legacy application modernization and created reusable project guidance and user interface (UI) component constraints for AI-generated code.</li>
+</ul>
+</article>
+
+<article>
+<h3>JPMorgan Chase | Software Engineer III (Associate)</h3>
+<p class="meta">New York, NY | January 2023 - January 2025</p>
+<ul>
+<li>Served as primary frontend engineer during the product&rsquo;s first year, building a high-performance multi-grid analytics workspace on a small, fast-moving team.</li>
+<li>Enabled users to explore, join, pivot, and retrieve server-held datasets containing 100M+ rows.</li>
+<li>Implemented virtualized rendering, visible-window data fetching over WebSockets, client-side caching, and state management to keep every grid responsive.</li>
+</ul>
+</article>
+
+<article>
+<h3>OKG Tech | Software Engineer</h3>
+<p class="meta">New York, NY | March 2022 - December 2022</p>
+<ul>
+<li>Shipped an updated bus-ticketing application using React and Node.js as the primary implementation engineer on a team of four.</li>
+<li>Developed scheduling, vaccination, appointment reminder, and clinical workflow features integrated with eClinicalWorks and existing operational systems.</li>
+</ul>
+</article>
+
+<article>
+<h3>Yunshang Tea | Co-Founder</h3>
+<p class="meta">Zhejiang, China | September 2015 - November 2021</p>
+<ul>
+<li>Managed retail and wholesale operations for a specialty tea business.</li>
+<li>Built database workflows for inventory, sales, and business operations.</li>
+</ul>
+</article>
+</section>
+
+<section class="education">
+<h2>Education</h2>
+<p><strong>Manhattan College | Bachelor of Arts (BA) in Computer Science</strong></p>
+<p>Bronx, NY | 2011 | Magna cum laude | Phi Beta Kappa</p>
+</section>
 </main>
 </body>
 </html>
