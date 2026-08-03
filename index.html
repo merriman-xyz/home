@@ -11,239 +11,136 @@
 <link rel="stylesheet" href="https://tanji.systems/tokens.css">
 <link rel="stylesheet" href="https://tanji.systems/public-web.css">
 <style>
-:root{
-  color-scheme:light;
-  --font-symbol:"Hiragino Sans","Yu Gothic","Noto Sans Symbols 2","Arial Unicode MS",sans-serif;
-}
-body{background:var(--color-surface-page);color:var(--color-text);margin:0;padding:0 18px 20px;
-  font:13px/1.5 var(--font-sans)}
-.wrap{--keaiui-web-shell-width:820px}
-.masthead{border-top:3px solid var(--color-accent);border-bottom:1px solid var(--color-border-strong)}
-.identity-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;
-  min-height:44px}
-.identity-lockup{display:flex;align-items:center;min-width:0}
-.eyebrow{color:var(--color-accent);font:700 9px/1.2 var(--font-mono);
-  letter-spacing:.07em;text-transform:uppercase;margin:0 0 4px}
-.tag{display:inline-flex;align-items:center;gap:.23em;text-decoration:none;cursor:pointer;
-  color:var(--color-accent-hover);
-  font:700 9px/1.1 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;
-  min-height:24px;padding:3px 0}
-.tag:hover{text-decoration:underline;text-underline-offset:2px}
-.tag:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
-.tag-mark{display:inline-grid;place-items:center;font-family:var(--font-symbol);font-size:.82em;
-  font-weight:500;letter-spacing:0;line-height:1;transform:translateY(-.025em)}
-h1{font:600 19px/1.2 var(--font-serif);letter-spacing:-.015em;
-  color:var(--color-text-strong);margin:0}
-.page-nav{display:flex;align-items:center;flex-wrap:wrap;gap:0 16px;
-  border-top:1px solid var(--color-border)}
-.page-nav a{display:inline-flex;align-items:center;min-height:30px;
-  color:var(--color-text-strong);font:600 10px/1 var(--font-serif);font-variant:small-caps;
-  letter-spacing:.045em;text-decoration:none}
-.page-nav a:hover{color:var(--color-accent-hover);text-decoration:underline;
-  text-decoration-color:var(--color-accent);text-underline-offset:3px}
-.profile{padding:11px 0 12px}
-.lede{max-width:630px;font:600 19px/1.3 var(--font-serif);color:var(--color-text-strong);margin:0 0 4px}
-.intro{max-width:66ch;color:var(--color-text-muted);margin:0}
-.profile-register{display:flex;align-items:baseline;flex-wrap:wrap;gap:3px 10px;
-  margin:7px 0 0;padding-top:6px;border-top:1px dotted var(--color-border-strong)}
-.profile-register div{display:flex;align-items:baseline;gap:4px;min-width:0}
-.profile-register div + div::before{content:'·';margin-right:6px;color:var(--color-accent)}
-.profile-register dt{color:var(--color-accent);font:700 9px/1.2 var(--font-mono);
-  letter-spacing:.06em;text-transform:uppercase}
-.profile-register dd{margin:0;color:var(--color-text-strong);font:600 11px/1.3 var(--font-serif)}
-.status-dot{display:inline-block;width:6px;height:6px;margin-right:5px;border:1px solid var(--color-success);
-  background:var(--color-success-bg)}
-.contact-nav{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:8px}
-.selected-work{padding:12px 0 0;scroll-margin-top:8px}
-.work-list{border-bottom:1px solid var(--color-border-strong)}
-.work-entry{min-width:0;padding:7px 0}
-.work-entry + .work-entry{border-top:1px solid var(--color-border)}
-.work-heading{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
-.work-index{min-width:20px;color:var(--color-accent);
-  font:700 9px/1 var(--font-mono);font-variant-numeric:tabular-nums}
-.work-name{display:inline-block;color:var(--color-text-strong);font:600 16px/1.25 var(--font-serif);margin:0}
-a.work-name{display:inline-flex;align-items:center;min-height:24px;color:var(--color-accent);text-underline-offset:2px}
-.work-description{max-width:68ch;color:var(--color-text-muted);font-size:12px;margin:2px 0 0 27px}
-.work-proof{color:var(--color-text-muted);font:700 10px/1.3 var(--font-sans);
-  letter-spacing:.05em;text-transform:uppercase;margin:0 0 0 auto;white-space:nowrap}
-h2.view{display:flex;align-items:center;gap:7px;font:600 17px/1.2 var(--font-serif);
-  color:var(--color-text-strong);margin:14px 0 0;padding-bottom:5px;
-  border-bottom:1px solid var(--color-border-strong);scroll-margin-top:8px}
-h2.view span{min-width:20px;color:var(--color-accent);font:700 9px/1 var(--font-mono)}
-.experience-entry{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;
-  padding:7px 0 9px;border-bottom:1px solid var(--color-border)}
-.experience-era{padding-top:2px;
-  color:var(--color-accent);font:700 11px/1.2 var(--font-mono);
-  font-variant-numeric:tabular-nums}
-.experience-body{min-width:0;padding-left:10px;border-left:1px solid var(--color-accent-soft-border)}
-.job{display:flex;justify-content:space-between;align-items:baseline;gap:6px 8px;flex-wrap:wrap;margin:0 0 4px}
-.job h3{font:600 16px/1.2 var(--font-serif);font-variant:small-caps;letter-spacing:.04em;
-  color:var(--color-text-strong);margin:0}
-.job .title{font:600 10px/1.2 var(--font-sans);color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.05em}
-.job .when{font-size:11px;color:var(--color-text-muted);font-variant-numeric:tabular-nums;white-space:nowrap;margin-left:auto}
-.experience-entry ul{margin:0;padding-left:18px}
-.experience-entry ul li{margin:0 0 3px}
-.experience-entry ul li:last-child{margin-bottom:0}
-.experience-entry ul b{color:var(--color-text-strong)}
-a.txt{color:var(--color-accent);text-decoration:underline;text-underline-offset:2px;font-weight:600}
-a.txt:hover{color:var(--color-accent-hover)}
-a.txt:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
-.skills-grid{padding:7px 0 9px;border-bottom:1px solid var(--color-border)}
-.skills-grid dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 18px;margin:0}
-.skills-grid dt{font:700 10px/1.7 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-muted)}
-.skills-grid dd{margin:0}
-.edu{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
-footer{margin-top:12px;padding-top:8px;border-top:1px solid var(--color-border);
-  font-size:11px;color:var(--color-text-muted)}
-.footer-links{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-2) var(--space-4)}
-@media (max-width:640px){
-  body{padding:0 12px 20px}
-  .profile{padding:8px 0 9px}
-  .selected-work{padding:9px 0 0}
-  .work-proof{width:100%;margin-left:27px;white-space:normal}
-}
+:root{color-scheme:light}
+body{margin:0;padding:0 16px 24px;color:var(--color-text);background:var(--color-surface-page);
+  font:13px/1.55 var(--font-sans)}
+.wrap{--keaiui-web-shell-width:700px}
+.site-header{padding:18px 0 16px;border-top:3px solid var(--color-accent);
+  border-bottom:1px solid var(--color-border-strong)}
+h1{margin:0;color:var(--color-text-strong);font:600 32px/1.2 var(--font-serif)}
+.role{margin:3px 0 0;color:var(--color-text-muted)}
+.intro{max-width:66ch;margin:9px 0 0;color:var(--color-text-strong);font:500 17px/1.45 var(--font-serif)}
+.primary-links{gap:14px;margin-top:9px}
+.primary-links a,.work-entry a,footer a{color:var(--color-accent);font-weight:600;
+  text-underline-offset:3px}
+.primary-links a:hover,.work-entry a:hover,footer a:hover{color:var(--color-accent-hover)}
+main section{padding:16px 0}
+main section + section{border-top:1px solid var(--color-border)}
+h2{margin:0 0 10px;color:var(--color-text-strong);font:600 19px/1.25 var(--font-serif)}
+.work-entry + .work-entry,.experience-entry + .experience-entry{margin-top:12px}
+h3{margin:0;color:var(--color-text-strong);font:600 16px/1.3 var(--font-serif)}
+.work-entry p{max-width:68ch;margin:2px 0 0}
+.job-meta{margin:1px 0 0;color:var(--color-text-muted);font-size:12px}
+.job-progression{margin:3px 0 0;color:var(--color-text-strong);font-size:13px}
+.experience-entry ul{margin:5px 0 0;padding-left:19px}
+.experience-entry li{margin:0 0 3px}
+.experience-entry li:last-child{margin-bottom:0}
+.skills p{margin:0 0 5px}
+.skills p:last-child{margin-bottom:0}
+footer{padding-top:12px;border-top:1px solid var(--color-border-strong);
+  color:var(--color-text-muted);font-size:12px}
+.footer-links{gap:12px}
 @media (max-width:480px){
-  .tag{min-height:var(--size-touch)}
-  .page-nav{gap:0 12px}
-  .page-nav a{min-height:var(--size-touch)}
-  .profile-register{display:grid;gap:3px}
-  .profile-register div + div::before{display:none}
-  h2.view{margin-top:14px}
-  .experience-entry{grid-template-columns:40px minmax(0,1fr);gap:9px}
-  .skills-grid dl{grid-template-columns:1fr;gap:1px}
-  .skills-grid dt{margin-top:8px}
-  .skills-grid dt:first-child{margin-top:0}
-  .footer-links a{display:inline-flex;align-items:center;justify-content:center;
-    min-width:var(--size-touch);min-height:var(--size-touch)}
+  body{padding-inline:12px}
+  .site-header{padding-block:15px 14px}
+  main section{padding-block:14px}
 }
 </style>
 </head>
 <body class="keaiui-web-page">
 <a class="keaiui-web-skip-link" href="#main">Skip to content</a>
 <div class="wrap keaiui-web-shell">
-<main id="main">
-<header class="masthead" id="profile">
-<div class="identity-bar">
-  <div class="identity-lockup">
-    <h1>Brian Merriman</h1>
-  </div>
-  <a class="tag" href="https://tanji.systems/"><span class="tag-mark" aria-hidden="true">※</span>Tanji Systems</a>
-</div>
-<nav class="page-nav keaiui-web-nav" aria-label="Primary">
-  <a href="#selected-work-heading">Work</a>
-  <a href="#experience-heading">Experience</a>
-  <a href="#skills-heading">Skills</a>
-  <a href="resume.html">Full résumé</a>
-</nav>
-<div class="profile">
-  <p class="eyebrow">Senior frontend engineer · New York</p>
-  <p class="lede">I build compact interfaces for complex data.</p>
-  <p class="intro">At JPMorgan Chase, I worked on a multi-grid analytics workspace for datasets with more than 100 million rows. I now build Ingrid and Showdown at Tanji Systems.</p>
-  <dl class="profile-register" aria-label="Current profile">
-    <div><dt>Availability</dt><dd><span class="status-dot" aria-hidden="true"></span>Open to full-time roles</dd></div>
-    <div><dt>Focus</dt><dd>Complex-data interfaces</dd></div>
-    <div><dt>Base</dt><dd>New York</dd></div>
-  </dl>
-  <nav class="contact-nav keaiui-web-nav" aria-label="Contact and résumé">
-    <a class="keaiui-web-action keaiui-web-action-primary" href="mailto:b@merriman.xyz">Email Brian</a>
-    <a class="keaiui-web-action" href="resume.html">Full résumé</a>
-    <a class="keaiui-web-action" href="https://github.com/merriman-xyz">GitHub</a>
+<header class="site-header">
+  <h1>Brian Merriman</h1>
+  <p class="role">Senior frontend engineer · New York</p>
+  <p class="intro">I build compact interfaces for complex data. At JPMorgan Chase, I worked on a multi-grid analytics workspace for datasets with more than 100 million rows. I now build Ingrid and Showdown at Tanji Systems.</p>
+  <nav class="primary-links keaiui-web-nav" aria-label="Contact and profile">
+    <a href="mailto:b@merriman.xyz">Email</a>
+    <a href="resume.html">Full résumé</a>
+    <a href="https://github.com/merriman-xyz">GitHub</a>
+    <a href="https://tanji.systems/">Tanji Systems</a>
   </nav>
-</div>
 </header>
 
-<section class="selected-work" aria-labelledby="selected-work-heading">
-<h2 class="view" id="selected-work-heading"><span>01</span>Selected work</h2>
-<div class="work-list">
+<main id="main">
+<section aria-labelledby="work-heading">
+  <h2 id="work-heading">Selected work</h2>
   <article class="work-entry">
-    <div class="work-heading"><span class="work-index">01</span><a class="work-name" href="https://ingrid.tanji.systems">Ingrid</a><span class="work-proof">Local-first · live sync</span></div>
-    <p class="work-description">A local-first hierarchical grid for notes, plans, and structured thinking.</p>
+    <h3><a href="https://ingrid.tanji.systems">Ingrid</a></h3>
+    <p>A local-first hierarchical grid for notes, plans, and structured thinking.</p>
   </article>
   <article class="work-entry">
-    <div class="work-heading"><span class="work-index">02</span><a class="work-name" href="https://showdown.tanji.systems">Showdown Elo</a><span class="work-proof">8M+ pitches · nightly</span></div>
-    <p class="work-description">MLB player ratings rebuilt nightly from more than 8 million Statcast pitches.</p>
+    <h3><a href="https://showdown.tanji.systems">Showdown Elo</a></h3>
+    <p>MLB player ratings rebuilt nightly from more than 8 million Statcast pitches.</p>
   </article>
   <article class="work-entry">
-    <div class="work-heading"><span class="work-index">03</span><h3 class="work-name">JPMorgan data workspace</h3><span class="work-proof">100M+ rows · primary frontend engineer</span></div>
-    <p class="work-description">A multi-grid analytics interface for joining, pivoting, and retrieving server-held datasets.</p>
+    <h3>JPMorgan data workspace</h3>
+    <p>A multi-grid analytics interface for joining, pivoting, and retrieving server-held datasets with more than 100 million rows.</p>
   </article>
-</div>
 </section>
 
-<h2 class="view" id="experience-heading"><span>02</span>Experience</h2>
-<div class="experience-entry">
-<span class="experience-era" aria-hidden="true">2026</span>
-<div class="experience-body">
-<div class="job"><h3>Tanji Systems</h3><span class="title">Independent Product Engineer</span><span class="when">New York · Jun 2026 – Present</span></div>
-<ul>
-<li><b>Ingrid</b> — local-first hierarchical grid application; production cloud synchronization and subscription billing</li>
-<li><b>Showdown Elo</b> — nightly MLB ratings from 8M+ Statcast pitches; benchmarked against betting markets, negative result published</li>
-<li>Owned end-to-end product engineering — product direction, frontend architecture, data modeling, UI development, deployment, and automated testing</li>
-</ul>
-</div>
-</div>
-<div class="experience-entry">
-<span class="experience-era" aria-hidden="true">2023</span>
-<div class="experience-body">
-<div class="job"><h3>JPMorgan Chase</h3><span class="title">Lead Software Engineer (Vice President)</span><span class="when">New York · Feb 2025 – May 2026</span></div>
-<div class="job" style="margin:-2px 0 5px"><span class="title" style="font-weight:400">Software Engineer III (Associate)</span><span class="when">Jan 2023 – Jan 2025</span></div>
-<ul>
-<li>Multi-grid analytics workspace — users explore, join, pivot, and retrieve server-held datasets containing 100M+ rows</li>
-<li>Virtualized rendering with visible-window data fetching over WebSockets, client-side caching, and state management</li>
-<li>Primary frontend engineer during the application&rsquo;s first year</li>
-<li>Evaluated LLM workflows; created reusable project guidance and UI component constraints for AI-generated code</li>
-</ul>
-</div>
-</div>
-<div class="experience-entry">
-<span class="experience-era" aria-hidden="true">2022</span>
-<div class="experience-body">
-<div class="job"><h3>OKG Tech</h3><span class="title">Software Engineer</span><span class="when">New York · Mar 2022 – Dec 2022</span></div>
-<ul>
-<li>Primary implementation engineer on an updated bus-ticketing system (React, Node.js) — four-person team</li>
-<li>Developed scheduling, vaccination, appointment reminder, and clinical workflow features integrated with eClinicalWorks and existing operational systems</li>
-</ul>
-</div>
-</div>
-<div class="experience-entry">
-<span class="experience-era" aria-hidden="true">2015</span>
-<div class="experience-body">
-<div class="job"><h3>Yunshang Tea</h3><span class="title">Co-Founder</span><span class="when">Zhejiang, China · Sep 2015 – Nov 2021</span></div>
-<ul>
-<li>Managed retail and wholesale operations for a specialty tea business</li>
-<li>Built database workflows for inventory, sales, and business operations</li>
-</ul>
-</div>
-</div>
+<section aria-labelledby="experience-heading">
+  <h2 id="experience-heading">Experience</h2>
+  <article class="experience-entry">
+    <h3>Tanji Systems</h3>
+    <p class="job-meta">Independent Product Engineer · New York · June 2026–present</p>
+    <ul>
+      <li>Built Ingrid, a local-first hierarchical grid with production cloud synchronization and subscription billing.</li>
+      <li>Built Showdown Elo, nightly MLB ratings from more than 8 million Statcast pitches.</li>
+      <li>Own product direction, frontend architecture, data modeling, deployment, and automated testing.</li>
+    </ul>
+  </article>
+  <article class="experience-entry">
+    <h3>JPMorgan Chase</h3>
+    <p class="job-meta">New York · January 2023–May 2026</p>
+    <p class="job-progression">Lead Software Engineer (Vice President), 2025–2026 · Software Engineer III (Associate), 2023–2025</p>
+    <ul>
+      <li>Built a multi-grid analytics workspace for exploring, joining, pivoting, and retrieving server-held datasets containing more than 100 million rows.</li>
+      <li>Implemented virtualized rendering, visible-window fetching over WebSockets, client-side caching, and state management.</li>
+      <li>Served as the primary frontend engineer during the application’s first year.</li>
+    </ul>
+  </article>
+  <article class="experience-entry">
+    <h3>OKG Tech</h3>
+    <p class="job-meta">Software Engineer · New York · March–December 2022</p>
+    <ul>
+      <li>Implemented an updated bus-ticketing system using React and Node.js.</li>
+      <li>Built scheduling, vaccination, appointment-reminder, and clinical-workflow features integrated with eClinicalWorks.</li>
+    </ul>
+  </article>
+  <article class="experience-entry">
+    <h3>Yunshang Tea</h3>
+    <p class="job-meta">Co-Founder · Zhejiang, China · September 2015–November 2021</p>
+    <ul>
+      <li>Managed retail and wholesale operations for a specialty tea business.</li>
+      <li>Built database workflows for inventory, sales, and business operations.</li>
+    </ul>
+  </article>
+</section>
 
-<h2 class="view" id="skills-heading"><span>03</span>Skills</h2>
-<div class="skills-grid"><dl>
-<dt>Programming</dt><dd>JavaScript (ES6+), SQL, HTML5, CSS3</dd>
-<dt>Frontend</dt><dd>React, vanilla JavaScript, data visualization, frontend architecture, virtualized rendering, web performance optimization, state management, client-side caching</dd>
-<dt>Data &amp; Backend</dt><dd>Node.js, SQLite, IndexedDB, Dexie, REST API integration, WebSockets, local-first synchronization, data modeling</dd>
-<dt>Engineering</dt><dd>Git, automated testing, unit testing, integration testing, end-to-end testing, deployment</dd>
-</dl></div>
+<section class="skills" aria-labelledby="skills-heading">
+  <h2 id="skills-heading">Skills</h2>
+  <p><strong>Frontend:</strong> JavaScript, React, HTML, CSS, data visualization, virtualized rendering, web performance, state management, and client-side caching.</p>
+  <p><strong>Data and backend:</strong> SQL, Node.js, SQLite, IndexedDB, Dexie, REST APIs, WebSockets, local-first synchronization, and data modeling.</p>
+  <p><strong>Engineering:</strong> Git, unit testing, integration testing, end-to-end testing, and deployment.</p>
+</section>
 
-<h2 class="view" id="education-heading"><span>04</span>Education</h2>
-<div class="experience-entry">
-<span class="experience-era" aria-hidden="true">2011</span>
-<div class="experience-body">
-<div class="job"><h3>Manhattan College</h3><span class="title">BA, Computer Science</span><span class="when">Bronx, NY</span></div>
-<ul>
-<li>magna cum laude · Phi Beta Kappa</li>
-</ul>
-</div>
-</div>
-
+<section aria-labelledby="education-heading">
+  <h2 id="education-heading">Education</h2>
+  <article class="experience-entry">
+    <h3>Manhattan College</h3>
+    <p class="job-meta">BA, Computer Science · Bronx, New York</p>
+    <p class="job-progression">magna cum laude · Phi Beta Kappa</p>
+  </article>
+</section>
 </main>
+
 <footer class="keaiui-web-footer">
-<span>Open to full-time roles · <a class="txt" href="mailto:b@merriman.xyz">b@merriman.xyz</a></span>
-<nav class="footer-links" aria-label="Résumé and profile">
-  <a class="txt" href="resume.pdf" download="Brian_Merriman_Resume.pdf">Résumé PDF</a>
-  <a class="txt" href="resume.docx" download="Brian_Merriman_Resume.docx">DOCX</a>
-  <a class="txt" href="resume.html">Full résumé</a>
-  <a class="txt" href="https://github.com/merriman-xyz">GitHub</a>
-</nav>
+  <span>Open to full-time roles · <a href="mailto:b@merriman.xyz">b@merriman.xyz</a></span>
+  <nav class="footer-links keaiui-web-nav" aria-label="Résumé downloads">
+    <a href="resume.pdf" download="Brian_Merriman_Resume.pdf">PDF</a>
+    <a href="resume.docx" download="Brian_Merriman_Resume.docx">DOCX</a>
+  </nav>
 </footer>
 </div>
 </body>
