@@ -17,38 +17,37 @@
 }
 body{background:var(--color-surface-page);color:var(--color-text);margin:0;padding:24px 16px 40px;
   font:13px/1.5 var(--font-sans)}
+.masthead{padding:0 0 20px;border-bottom:1px solid var(--color-border-strong)}
 h1{font:600 32px/1.2 var(--font-serif);font-variant:small-caps;letter-spacing:.06em;
   color:var(--color-text-strong);margin:0}
-h1 .tag{display:inline-flex;align-items:center;gap:.23em;text-decoration:none;cursor:pointer;background:var(--color-accent-soft);
-  color:var(--color-accent-hover);border:1px solid var(--color-accent-soft-border);
+h1 .tag{display:inline-flex;align-items:center;gap:.23em;text-decoration:none;cursor:pointer;
+  color:var(--color-accent-hover);
   font:700 9px/1.1 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;
-  font-variant:normal;padding:3px 7px;border-radius:2px;vertical-align:6px;margin-left:10px;
-  box-shadow:var(--bevel-raised);transition:border-color var(--motion-fast),background var(--motion-fast)}
-h1 .tag:hover{border-color:var(--color-accent);background:var(--color-accent-soft-hover)}
-h1 .tag:active{background:var(--color-accent-soft-active);box-shadow:var(--bevel-active)}
+  font-variant:normal;padding:3px 0;vertical-align:6px;margin-left:12px}
+h1 .tag:hover{text-decoration:underline;text-underline-offset:2px}
 h1 .tag:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
 .tag-mark{display:inline-grid;place-items:center;font-family:var(--font-symbol);font-size:.82em;
   font-weight:500;letter-spacing:0;line-height:1;transform:translateY(-.025em)}
 p.sub{font-size:11px;color:var(--color-text-muted);margin:2px 0 12px;letter-spacing:.04em}
-p.looking{font-size:13px;margin:0 0 16px;color:var(--color-text)}
+p.looking{font-size:13px;margin:0;color:var(--color-text)}
 p.looking b{color:var(--color-text-strong)}
-.plaques{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:0 0 4px}
-@media (max-width:640px){.plaques{grid-template-columns:1fr}}
-.plaque{display:block;text-decoration:none;color:inherit;background:var(--color-surface-raised);
-  border:1px solid var(--color-border-strong);border-top:2px solid var(--color-accent);border-radius:var(--radius-3);
-  padding:10px 14px;box-shadow:var(--bevel-raised);
-  transition:background var(--motion-fast),box-shadow var(--motion-fast)}
-a.plaque:hover{background:var(--color-button-face)}
-a.plaque:active{background:var(--color-button-active);box-shadow:var(--bevel-active)}
+.plaques{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin:0 0 4px;
+  border-bottom:1px solid var(--color-border)}
+.plaque{display:block;text-decoration:none;color:inherit;padding:20px 16px 22px}
+.plaque:first-child{padding-left:0}
+.plaque + .plaque{border-left:1px solid var(--color-border)}
+.plaque:last-child{padding-right:0}
+a.plaque:hover{background:var(--color-surface-raised)}
 a.plaque:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
+.plaque-label{display:block;color:var(--color-accent);font:600 10px/1.2 var(--font-sans);
+  letter-spacing:.06em;text-transform:uppercase}
 .plaque .big{font:600 19px/1.25 var(--font-serif);color:var(--color-text-strong);margin:3px 0 1px}
 .plaque .big .go{color:var(--color-accent);font-size:13px;vertical-align:2px}
 .plaque .sub{font-size:10.5px;color:var(--color-text-muted);font-variant-numeric:tabular-nums}
 h2.view{font:600 16px/1.2 var(--font-serif);font-variant:small-caps;letter-spacing:.05em;
-  color:var(--color-text-strong);margin:18px 0 6px}
-.card{background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:var(--radius-3);
-  padding:10px 14px;box-shadow:var(--bevel-raised)}
-.card + .card{margin-top:10px}
+  color:var(--color-text-strong);margin:28px 0 8px}
+.card{padding:14px 0 18px;border-top:1px solid var(--color-border)}
+.card + .card{margin-top:0}
 .job{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 5px}
 .job h3{font:600 16px/1.2 var(--font-serif);font-variant:small-caps;letter-spacing:.05em;
   color:var(--color-text-strong);margin:0}
@@ -74,10 +73,16 @@ button.copy .ic{display:inline-flex;align-items:center;justify-content:center;wi
 button.copy:hover .ic{background:var(--color-button-hover);color:var(--color-accent-hover)}
 button.copy:active .ic{background:var(--color-button-active);box-shadow:var(--bevel-active)}
 button.copy:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
-footer{margin-top:18px;font-size:11px;color:var(--color-text-muted)}
+footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--color-border);
+  font-size:11px;color:var(--color-text-muted)}
 .footer-links{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-2) var(--space-4)}
+@media (max-width:640px){
+  .plaques{grid-template-columns:1fr}
+  .plaque,.plaque:first-child,.plaque:last-child{padding:18px 0}
+  .plaque + .plaque{border-top:1px solid var(--color-border);border-left:0}
+}
 @media (max-width:480px){
-  body{padding:16px 10px 36px}
+  body{padding:20px 16px 36px}
   .footer-links a{display:inline-flex;align-items:center;justify-content:center;
     min-width:var(--size-touch);min-height:var(--size-touch)}
 }
@@ -86,27 +91,29 @@ footer{margin-top:18px;font-size:11px;color:var(--color-text-muted)}
 <body class="keaiui-web-page">
 <div class="wrap keaiui-web-shell">
 <main>
+<header class="masthead">
 <h1>Brian Merriman<a class="tag" href="https://tanji.systems/"><span class="tag-mark" aria-hidden="true">※</span>Tanji Systems</a></h1>
 <p class="sub">senior frontend engineer · complex-data applications · new york, ny · <button class="copy" title="Copy b@merriman.xyz" aria-label="Copy b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button> · <a class="txt" href="https://github.com/merriman-xyz">github</a> · <a class="txt" href="resume.html">full résumé</a></p>
 <p class="looking"><b>Open to full-time roles</b> — senior frontend engineer / frontend software engineer · complex-data applications · available now · <button class="copy" title="Copy b@merriman.xyz" aria-label="Copy b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button> · <a class="txt" href="resume.pdf" download="Brian_Merriman_Resume.pdf">résumé PDF</a> · <a class="txt" href="resume.docx" download="Brian_Merriman_Resume.docx">DOCX</a></p>
+</header>
 
-<div class="plaques">
+<section class="plaques" aria-label="Selected work">
 <a class="plaque" href="https://ingrid.tanji.systems">
-  <span class="keaiui-web-label">Now building</span>
+  <span class="plaque-label">Now building</span>
   <div class="big">Ingrid <span class="go"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 2.5H2.5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.5"/><path d="M7.5 1.5h3v3"/><path d="M10.5 1.5 5.75 6.25"/></svg></span></div>
   <div class="sub">local-first hierarchical grid application · production sync and billing</div>
 </a>
 <a class="plaque" href="https://showdown.tanji.systems">
-  <span class="keaiui-web-label">Just shipped</span>
+  <span class="plaque-label">Just shipped</span>
   <div class="big">Showdown Elo <span class="go"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 2.5H2.5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.5"/><path d="M7.5 1.5h3v3"/><path d="M10.5 1.5 5.75 6.25"/></svg></span></div>
   <div class="sub">MLB player Elo · 8M+ pitches · nightly</div>
 </a>
 <div class="plaque">
-  <span class="keaiui-web-label">Track record</span>
+  <span class="plaque-label">Track record</span>
   <div class="big">100M+ rows</div>
   <div class="sub">JPMorgan multi-grid data workspace</div>
 </div>
-</div>
+</section>
 
 <h2 class="view">Experience</h2>
 <div class="card">
