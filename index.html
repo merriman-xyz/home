@@ -16,54 +16,71 @@
   --font-symbol:"Hiragino Sans","Yu Gothic","Noto Sans Symbols 2","Arial Unicode MS",sans-serif;
 }
 body{background:var(--color-surface-page);color:var(--color-text);margin:0;padding:24px 16px 40px;
-  font:13px/1.5 var(--font-sans)}
-.masthead{padding:0 0 20px;border-bottom:1px solid var(--color-border-strong)}
-h1{font:600 32px/1.2 var(--font-serif);font-variant:small-caps;letter-spacing:.06em;
-  color:var(--color-text-strong);margin:0}
-h1 .tag{display:inline-flex;align-items:center;gap:.23em;text-decoration:none;cursor:pointer;
+  font:13px/1.55 var(--font-sans)}
+.masthead{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:48px;
+  padding:28px 0 30px 24px;border-left:3px solid var(--color-accent);
+  border-bottom:1px solid var(--color-border-strong)}
+.identity-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 8px}
+.eyebrow{color:var(--color-text-muted);font:700 10px/1.2 var(--font-sans);
+  letter-spacing:.08em;text-transform:uppercase;margin:0}
+.tag{display:inline-flex;align-items:center;gap:.23em;text-decoration:none;cursor:pointer;
   color:var(--color-accent-hover);
   font:700 9px/1.1 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;
-  font-variant:normal;padding:3px 0;vertical-align:6px;margin-left:12px}
-h1 .tag:hover{text-decoration:underline;text-underline-offset:2px}
-h1 .tag:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
+  padding:3px 0}
+.tag:hover{text-decoration:underline;text-underline-offset:2px}
+.tag:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
 .tag-mark{display:inline-grid;place-items:center;font-family:var(--font-symbol);font-size:.82em;
   font-weight:500;letter-spacing:0;line-height:1;transform:translateY(-.025em)}
-p.sub{font-size:11px;color:var(--color-text-muted);margin:2px 0 12px;letter-spacing:.04em}
-p.looking{font-size:13px;margin:0;color:var(--color-text)}
-p.looking b{color:var(--color-text-strong)}
-.plaques{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin:0 0 4px;
-  border-bottom:1px solid var(--color-border)}
-.plaque{display:block;text-decoration:none;color:inherit;padding:20px 16px 22px}
-.plaque:first-child{padding-left:0}
-.plaque + .plaque{border-left:1px solid var(--color-border)}
-.plaque:last-child{padding-right:0}
-a.plaque:hover{background:var(--color-surface-raised)}
-a.plaque:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
-.plaque-label{display:block;color:var(--color-accent);font:600 10px/1.2 var(--font-sans);
-  letter-spacing:.06em;text-transform:uppercase}
-.plaque .big{font:600 19px/1.25 var(--font-serif);color:var(--color-text-strong);margin:3px 0 1px}
-.plaque .big .go{color:var(--color-accent);font-size:13px;vertical-align:2px}
-.plaque .sub{font-size:10.5px;color:var(--color-text-muted);font-variant-numeric:tabular-nums}
-h2.view{font:600 16px/1.2 var(--font-serif);font-variant:small-caps;letter-spacing:.05em;
-  color:var(--color-text-strong);margin:28px 0 8px}
-.card{padding:14px 0 18px;border-top:1px solid var(--color-border)}
-.card + .card{margin-top:0}
+h1{font:600 32px/1.04 var(--font-serif);letter-spacing:-.025em;
+  color:var(--color-text-strong);margin:0 0 12px}
+.lede{max-width:630px;font:500 19px/1.35 var(--font-serif);color:var(--color-text-strong);margin:0 0 10px}
+.intro{max-width:670px;color:var(--color-text-muted);margin:0}
+.contact-nav{display:flex;align-items:center;flex-wrap:wrap;gap:0 16px;margin-top:14px}
+.contact-nav a,.contact-nav button{display:inline-flex;align-items:center;min-height:44px}
+.availability{align-self:end;padding-bottom:2px}
+.availability-label{display:block;color:var(--color-accent);font:700 10px/1.2 var(--font-sans);
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
+.availability strong{display:block;color:var(--color-text-strong);font:600 17px/1.3 var(--font-serif);margin-bottom:5px}
+.availability p{font-size:12px;color:var(--color-text-muted);margin:0}
+.selected-work{margin:38px 0 54px}
+.section-intro{display:grid;grid-template-columns:140px minmax(0,1fr);gap:24px;
+  align-items:baseline;margin:0 0 12px}
+.section-kicker{color:var(--color-accent);font:700 10px/1.2 var(--font-sans);
+  letter-spacing:.08em;text-transform:uppercase;margin:0}
+.section-intro h2{font:600 19px/1.3 var(--font-serif);color:var(--color-text-strong);margin:0}
+.work-ledger{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--color-border-strong)}
+.work-item{display:grid;grid-template-columns:36px minmax(0,1fr) max-content 16px;gap:16px;
+  align-items:center;padding:17px 8px 18px 0;border-top:1px solid var(--color-border);
+  color:inherit;text-decoration:none}
+a.work-item:hover{background:var(--color-surface-raised)}
+a.work-item:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:-2px}
+.work-number{color:var(--color-accent);font:700 10px/1 var(--font-sans);letter-spacing:.06em}
+.work-name{display:block;color:var(--color-text-strong);font:600 19px/1.25 var(--font-serif);margin-bottom:2px}
+.work-description{display:block;color:var(--color-text-muted);font-size:12px}
+.work-proof{color:var(--color-text-muted);font:700 10px/1.3 var(--font-sans);
+  letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;text-align:right}
+.work-arrow{color:var(--color-accent);font-size:16px;text-align:right}
+h2.view{display:flex;align-items:center;gap:10px;font:600 19px/1.2 var(--font-serif);
+  color:var(--color-text-strong);margin:48px 0 10px}
+h2.view::before{content:'';width:24px;height:2px;background:var(--color-accent);flex:0 0 auto}
+.experience-entry{padding:16px 0 20px;border-top:1px solid var(--color-border)}
 .job{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 5px}
-.job h3{font:600 16px/1.2 var(--font-serif);font-variant:small-caps;letter-spacing:.05em;
+.job h3{font:600 17px/1.2 var(--font-serif);font-variant:small-caps;letter-spacing:.04em;
   color:var(--color-text-strong);margin:0}
 .job .title{font:600 10px/1.2 var(--font-sans);color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.05em}
 .job .when{font-size:11px;color:var(--color-text-muted);font-variant-numeric:tabular-nums;white-space:nowrap;margin-left:auto}
-.card ul{margin:0;padding-left:17px}
-.card ul li{margin:0 0 3px}
-.card ul li:last-child{margin-bottom:0}
-.card ul b{color:var(--color-text-strong)}
+.experience-entry ul{margin:0;padding-left:18px}
+.experience-entry ul li{margin:0 0 4px}
+.experience-entry ul li:last-child{margin-bottom:0}
+.experience-entry ul b{color:var(--color-text-strong)}
 a.txt{color:var(--color-accent);text-decoration:none;font-weight:600}
 a.txt::after{content:'↗︎';margin-left:3px;font-size:9px;vertical-align:1px}
 a.txt:hover{color:var(--color-accent-hover);text-decoration:underline}
 a.txt:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
-.skills dl{display:grid;grid-template-columns:max-content 1fr;gap:3px 14px;margin:0}
-.skills dt{font:700 10px/1.6 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-muted)}
-.skills dd{margin:0}
+.skills-grid{padding:16px 0 20px;border-top:1px solid var(--color-border)}
+.skills-grid dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 18px;margin:0}
+.skills-grid dt{font:700 10px/1.7 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-muted)}
+.skills-grid dd{margin:0}
 .edu{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 button.copy{all:unset;box-sizing:border-box;cursor:pointer;font-weight:inherit;color:inherit}
 button.copy .ic{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
@@ -77,12 +94,24 @@ footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--color-border)
   font-size:11px;color:var(--color-text-muted)}
 .footer-links{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-2) var(--space-4)}
 @media (max-width:640px){
-  .plaques{grid-template-columns:1fr}
-  .plaque,.plaque:first-child,.plaque:last-child{padding:18px 0}
-  .plaque + .plaque{border-top:1px solid var(--color-border);border-left:0}
+  .masthead{grid-template-columns:1fr;gap:22px;padding:18px 0 24px 16px}
+  h1{font-size:32px}
+  .lede{font-size:19px}
+  .availability{border-top:1px solid var(--color-border);padding-top:16px}
+  .selected-work{margin:32px 0 46px}
+  .section-intro{grid-template-columns:1fr;gap:5px}
+  .work-item{grid-template-columns:28px minmax(0,1fr) 16px;gap:10px;padding:16px 4px 17px 0}
+  .work-proof{grid-column:2;text-align:left;white-space:normal;margin-top:3px}
+  .work-arrow{grid-column:3;grid-row:1 / span 2}
 }
 @media (max-width:480px){
   body{padding:20px 16px 36px}
+  .identity-top{align-items:flex-start;flex-direction:column;gap:8px}
+  .contact-nav{gap:0 14px}
+  h2.view{margin-top:42px}
+  .skills-grid dl{grid-template-columns:1fr;gap:1px}
+  .skills-grid dt{margin-top:8px}
+  .skills-grid dt:first-child{margin-top:0}
   .footer-links a{display:inline-flex;align-items:center;justify-content:center;
     min-width:var(--size-touch);min-height:var(--size-touch)}
 }
@@ -92,31 +121,63 @@ footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--color-border)
 <div class="wrap keaiui-web-shell">
 <main>
 <header class="masthead">
-<h1>Brian Merriman<a class="tag" href="https://tanji.systems/"><span class="tag-mark" aria-hidden="true">※</span>Tanji Systems</a></h1>
-<p class="sub">senior frontend engineer · complex-data applications · new york, ny · <button class="copy" title="Copy b@merriman.xyz" aria-label="Copy b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button> · <a class="txt" href="https://github.com/merriman-xyz">github</a> · <a class="txt" href="resume.html">full résumé</a></p>
-<p class="looking"><b>Open to full-time roles</b> — senior frontend engineer / frontend software engineer · complex-data applications · available now · <button class="copy" title="Copy b@merriman.xyz" aria-label="Copy b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button> · <a class="txt" href="resume.pdf" download="Brian_Merriman_Resume.pdf">résumé PDF</a> · <a class="txt" href="resume.docx" download="Brian_Merriman_Resume.docx">DOCX</a></p>
+<div class="identity">
+  <div class="identity-top">
+    <p class="eyebrow">Senior frontend engineer · New York</p>
+    <a class="tag" href="https://tanji.systems/"><span class="tag-mark" aria-hidden="true">※</span>Tanji Systems</a>
+  </div>
+  <h1>Brian Merriman</h1>
+  <p class="lede">I build clear interfaces for systems with a lot going on.</p>
+  <p class="intro">Most recently: a 100M+ row analytics workspace at JPMorgan Chase, a local-first grid editor, and nightly MLB ratings built from 8M+ pitches.</p>
+  <nav class="contact-nav" aria-label="Contact and résumé">
+    <button class="copy" title="Copy b@merriman.xyz" aria-label="Copy b@merriman.xyz">b@merriman.xyz<span class="ic" aria-hidden="true">⧉</span></button>
+    <a class="txt" href="https://github.com/merriman-xyz">github</a>
+    <a class="txt" href="resume.html">full résumé</a>
+    <a class="txt" href="resume.pdf" download="Brian_Merriman_Resume.pdf">PDF</a>
+  </nav>
+</div>
+<aside class="availability" aria-label="Availability">
+  <span class="availability-label">Available now</span>
+  <strong>Open to full-time roles.</strong>
+  <p>Senior frontend engineer · frontend software engineer · complex-data applications</p>
+</aside>
 </header>
 
-<section class="plaques" aria-label="Selected work">
-<a class="plaque" href="https://ingrid.tanji.systems">
-  <span class="plaque-label">Now building</span>
-  <div class="big">Ingrid <span class="go"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 2.5H2.5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.5"/><path d="M7.5 1.5h3v3"/><path d="M10.5 1.5 5.75 6.25"/></svg></span></div>
-  <div class="sub">local-first hierarchical grid application · production sync and billing</div>
-</a>
-<a class="plaque" href="https://showdown.tanji.systems">
-  <span class="plaque-label">Just shipped</span>
-  <div class="big">Showdown Elo <span class="go"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 2.5H2.5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.5"/><path d="M7.5 1.5h3v3"/><path d="M10.5 1.5 5.75 6.25"/></svg></span></div>
-  <div class="sub">MLB player Elo · 8M+ pitches · nightly</div>
-</a>
-<div class="plaque">
-  <span class="plaque-label">Track record</span>
-  <div class="big">100M+ rows</div>
-  <div class="sub">JPMorgan multi-grid data workspace</div>
+<section class="selected-work" aria-labelledby="selected-work-heading">
+<div class="section-intro">
+  <p class="section-kicker">Selected work</p>
+  <h2 id="selected-work-heading">Systems built for scale, thought, and play.</h2>
 </div>
+<ol class="work-ledger">
+  <li>
+    <a class="work-item" href="https://ingrid.tanji.systems">
+      <span class="work-number">01</span>
+      <span><strong class="work-name">Ingrid</strong><span class="work-description">A local-first hierarchical grid for notes, plans, and structured thinking.</span></span>
+      <span class="work-proof">Local-first · live sync</span>
+      <span class="work-arrow" aria-hidden="true">↗︎</span>
+    </a>
+  </li>
+  <li>
+    <a class="work-item" href="https://showdown.tanji.systems">
+      <span class="work-number">02</span>
+      <span><strong class="work-name">Showdown Elo</strong><span class="work-description">MLB player ratings that treat every at-bat as a match.</span></span>
+      <span class="work-proof">8M+ pitches · nightly</span>
+      <span class="work-arrow" aria-hidden="true">↗︎</span>
+    </a>
+  </li>
+  <li>
+    <div class="work-item">
+      <span class="work-number">03</span>
+      <span><strong class="work-name">JPMorgan data workspace</strong><span class="work-description">A multi-grid analytics interface for joining, pivoting, and exploring server-held data.</span></span>
+      <span class="work-proof">100M+ rows</span>
+      <span class="work-arrow" aria-hidden="true">—</span>
+    </div>
+  </li>
+</ol>
 </section>
 
 <h2 class="view">Experience</h2>
-<div class="card">
+<div class="experience-entry">
 <div class="job"><h3>Tanji Systems</h3><span class="title">Independent Product Engineer</span><span class="when">New York · Jun 2026 – Present</span></div>
 <ul>
 <li><b>Ingrid</b> — local-first hierarchical grid application; production cloud synchronization and subscription billing</li>
@@ -124,7 +185,7 @@ footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--color-border)
 <li>Owned end-to-end product engineering — product direction, frontend architecture, data modeling, UI development, deployment, and automated testing</li>
 </ul>
 </div>
-<div class="card">
+<div class="experience-entry">
 <div class="job"><h3>JPMorgan Chase</h3><span class="title">Lead Software Engineer (Vice President)</span><span class="when">New York · Feb 2025 – May 2026</span></div>
 <div class="job" style="margin:-2px 0 5px"><span class="title" style="font-weight:400">Software Engineer III (Associate)</span><span class="when">Jan 2023 – Jan 2025</span></div>
 <ul>
@@ -134,14 +195,14 @@ footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--color-border)
 <li>Evaluated LLM workflows; created reusable project guidance and UI component constraints for AI-generated code</li>
 </ul>
 </div>
-<div class="card">
+<div class="experience-entry">
 <div class="job"><h3>OKG Tech</h3><span class="title">Software Engineer</span><span class="when">New York · Mar 2022 – Dec 2022</span></div>
 <ul>
 <li>Primary implementation engineer on an updated bus-ticketing system (React, Node.js) — four-person team</li>
 <li>Developed scheduling, vaccination, appointment reminder, and clinical workflow features integrated with eClinicalWorks and existing operational systems</li>
 </ul>
 </div>
-<div class="card">
+<div class="experience-entry">
 <div class="job"><h3>Yunshang Tea</h3><span class="title">Co-Founder</span><span class="when">Zhejiang, China · Sep 2015 – Nov 2021</span></div>
 <ul>
 <li>Managed retail and wholesale operations for a specialty tea business</li>
@@ -150,7 +211,7 @@ footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--color-border)
 </div>
 
 <h2 class="view">Skills</h2>
-<div class="card skills"><dl>
+<div class="skills-grid"><dl>
 <dt>Programming</dt><dd>JavaScript (ES6+), SQL, HTML5, CSS3</dd>
 <dt>Frontend</dt><dd>React, vanilla JavaScript, data visualization, frontend architecture, virtualized rendering, web performance optimization, state management, client-side caching</dd>
 <dt>Data &amp; Backend</dt><dd>Node.js, SQLite, IndexedDB, Dexie, REST API integration, WebSockets, local-first synchronization, data modeling</dd>
@@ -158,7 +219,7 @@ footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--color-border)
 </dl></div>
 
 <h2 class="view">Education</h2>
-<div class="card">
+<div class="experience-entry">
 <div class="job"><h3>Manhattan College</h3><span class="title">BA, Computer Science</span><span class="when">Bronx, NY</span></div>
 <ul>
 <li>magna cum laude · Phi Beta Kappa</li>
