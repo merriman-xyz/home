@@ -18,19 +18,15 @@
 body{background:var(--color-surface-page);color:var(--color-text);margin:0;padding:0 24px 24px;
   font:13px/1.55 var(--font-sans)}
 .wrap{--keaiui-web-shell-width:1040px}
-.masthead{padding:0 0 18px;border-bottom:1px solid var(--color-border-strong)}
-.record-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;
-  min-height:28px;margin:0 0 16px;padding:4px 8px;color:var(--color-accent-ink);
-  background:var(--color-accent);font:700 9px/1.2 var(--font-sans);
-  letter-spacing:.07em;text-transform:uppercase}
-.record-bar span:last-child{text-align:right}
+.masthead{padding:14px 0 16px;border-top:3px solid var(--color-accent);
+  border-bottom:1px solid var(--color-border-strong)}
 .identity-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 6px}
 .eyebrow{color:var(--color-text-muted);font:700 10px/1.2 var(--font-sans);
   letter-spacing:.08em;text-transform:uppercase;margin:0}
 .tag{display:inline-flex;align-items:center;gap:.23em;text-decoration:none;cursor:pointer;
   color:var(--color-accent-hover);
   font:700 9px/1.1 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;
-  padding:3px 0}
+  min-height:24px;padding:3px 0}
 .tag:hover{text-decoration:underline;text-underline-offset:2px}
 .tag:focus-visible{outline:1px dotted var(--focus-ring);outline-offset:2px}
 .tag-mark{display:inline-grid;place-items:center;font-family:var(--font-symbol);font-size:.82em;
@@ -39,35 +35,37 @@ h1{font:600 32px/1.04 var(--font-serif);letter-spacing:-.025em;
   color:var(--color-text-strong);margin:0 0 8px}
 .lede{max-width:630px;font:500 19px/1.35 var(--font-serif);color:var(--color-text-strong);margin:0 0 8px}
 .intro{max-width:680px;color:var(--color-text-muted);margin:0}
+.availability{margin:8px 0 0;padding-left:8px;border-left:2px solid var(--color-accent);
+  color:var(--color-text-muted);font-size:11.5px}
+.availability strong{color:var(--color-text-strong)}
 .contact-nav{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px}
-.availability{font-size:11.5px;color:var(--color-text-muted);margin:8px 0 0}
-.career-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:14px 0 0;
-  padding:0;border-top:1px solid var(--color-border-strong);
-  border-bottom:1px solid var(--color-border-strong);list-style:none;
-  background:var(--color-surface-sunken);box-shadow:var(--bevel-inset-rule)}
-.career-path li{min-width:0;padding:7px 9px}
-.career-path li + li{border-left:1px solid var(--color-border)}
-.career-path span{display:block;margin-bottom:2px;color:var(--color-accent);
+.career-path{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px;margin:14px 0 0;
+  padding:8px 0 0;border-top:1px solid var(--color-border-strong);list-style:none}
+.career-path li{display:flex;align-items:baseline;gap:6px;min-width:0}
+.career-path li + li::before{content:'→';margin-right:4px;color:var(--color-accent);
+  font:700 11px/1 var(--font-serif)}
+.career-path span{color:var(--color-accent);
   font:700 9px/1 var(--font-mono);font-variant-numeric:tabular-nums}
-.career-path strong{display:block;color:var(--color-text-strong);
+.career-path strong{color:var(--color-text-strong);
   font:600 11.5px/1.25 var(--font-serif)}
-.selected-work{padding:18px 0 0}
+.selected-work{padding:16px 0 0}
 .section-intro{max-width:620px;margin:0}
 .section-kicker{color:var(--color-accent);font:700 10px/1.2 var(--font-sans);
   letter-spacing:.08em;text-transform:uppercase;margin:0 0 4px}
 .section-intro h2{font:600 19px/1.3 var(--font-serif);color:var(--color-text-strong);margin:0}
-.work-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:12px;
-  border-top:1px solid var(--color-border-strong);border-bottom:1px solid var(--color-border-strong)}
-.work-entry{min-width:0;padding:12px 16px 14px}
-.work-entry + .work-entry{border-left:1px solid var(--color-border)}
+.work-list{margin-top:10px;border-top:1px solid var(--color-border-strong);
+  border-bottom:1px solid var(--color-border-strong)}
+.work-entry{display:grid;grid-template-columns:28px minmax(150px,.55fr) minmax(0,1fr) auto;
+  gap:10px;align-items:baseline;min-width:0;padding:9px 0}
+.work-entry + .work-entry{border-top:1px solid var(--color-border)}
 .work-index{display:inline-grid;place-items:center;min-width:24px;min-height:18px;
-  margin:0 0 6px;color:var(--color-accent-ink);background:var(--color-accent);
+  margin:0;color:var(--color-accent-ink);background:var(--color-accent);
   font:700 9px/1 var(--font-mono);font-variant-numeric:tabular-nums}
-.work-name{display:inline-block;color:var(--color-text-strong);font:600 17px/1.25 var(--font-serif);margin:0 0 4px}
-a.work-name{color:var(--color-accent);text-underline-offset:2px}
+.work-name{display:inline-block;color:var(--color-text-strong);font:600 17px/1.25 var(--font-serif);margin:0}
+a.work-name{display:inline-flex;align-items:center;min-height:24px;color:var(--color-accent);text-underline-offset:2px}
 .work-description{color:var(--color-text-muted);font-size:12px;margin:0}
 .work-proof{color:var(--color-text-muted);font:700 10px/1.3 var(--font-sans);
-  letter-spacing:.05em;text-transform:uppercase;margin:6px 0 0}
+  letter-spacing:.05em;text-transform:uppercase;margin:0;white-space:nowrap}
 h2.view{font:600 19px/1.2 var(--font-serif);color:var(--color-text-strong);margin:20px 0 6px}
 .experience-entry{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;
   padding:9px 0 11px;border-top:1px solid var(--color-border)}
@@ -97,19 +95,21 @@ footer{margin-top:18px;padding-top:10px;border-top:1px solid var(--color-border)
 .footer-links{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-2) var(--space-4)}
 @media (max-width:640px){
   body{padding:0 16px 24px}
-  .masthead{padding:0 0 16px}
-  .record-bar{margin-bottom:14px}
+  .masthead{padding:12px 0 14px}
   h1{font-size:32px}
   .lede{font-size:19px}
   .selected-work{padding:16px 0 0}
-  .work-grid{grid-template-columns:1fr}
-  .work-entry,.work-entry:first-child,.work-entry:last-child{padding:12px 0}
-  .work-entry + .work-entry{border-top:1px solid var(--color-border);border-left:0}
+  .work-entry{grid-template-columns:28px minmax(0,1fr);gap:3px 8px;padding:10px 0}
+  .work-entry :where(.work-name,.work-description,.work-proof){grid-column:2}
+  .work-index{grid-row:1;align-self:center}
+  .work-proof{margin-top:2px;white-space:normal}
 }
 @media (max-width:480px){
   .identity-top{gap:8px}
+  .tag{min-height:var(--size-touch)}
+  .career-path{align-items:flex-start;flex-direction:column;gap:5px}
+  .career-path li + li::before{content:'↓';min-width:9px;margin-right:0;text-align:center}
   h2.view{margin-top:20px}
-  .career-path li{padding:7px 6px}
   .experience-entry{grid-template-columns:40px minmax(0,1fr);gap:9px}
   .skills-grid dl{grid-template-columns:1fr;gap:1px}
   .skills-grid dt{margin-top:8px}
@@ -123,15 +123,15 @@ footer{margin-top:18px;padding-top:10px;border-top:1px solid var(--color-border)
 <div class="wrap keaiui-web-shell">
 <main>
 <header class="masthead">
-<div class="record-bar"><span>Senior frontend engineer · New York</span><span>Open to full-time roles</span></div>
 <div class="identity">
   <div class="identity-top">
-    <p class="eyebrow">Complex-data interfaces · local-first products</p>
+    <p class="eyebrow">Senior frontend engineer · New York</p>
     <a class="tag" href="https://tanji.systems/"><span class="tag-mark" aria-hidden="true">※</span>Tanji Systems</a>
   </div>
   <h1>Brian Merriman</h1>
   <p class="lede">I build compact interfaces for complex data.</p>
   <p class="intro">At JPMorgan Chase, I worked on a multi-grid analytics workspace for datasets with more than 100 million rows. I now build Ingrid and Showdown at Tanji Systems.</p>
+  <p class="availability"><strong>Open to full-time roles.</strong> Complex-data interfaces and local-first products.</p>
   <nav class="contact-nav keaiui-web-nav" aria-label="Contact and résumé">
     <a class="keaiui-web-action keaiui-web-action-primary" href="mailto:b@merriman.xyz">Email Brian</a>
     <a class="keaiui-web-action" href="resume.html">Full résumé</a>
@@ -150,7 +150,7 @@ footer{margin-top:18px;padding-top:10px;border-top:1px solid var(--color-border)
   <p class="section-kicker">Selected work</p>
   <h2 id="selected-work-heading">Recent products and systems.</h2>
 </div>
-<div class="work-grid">
+<div class="work-list">
   <article class="work-entry">
     <p class="work-index">01</p>
     <a class="work-name" href="https://ingrid.tanji.systems">Ingrid</a>
@@ -241,10 +241,10 @@ footer{margin-top:18px;padding-top:10px;border-top:1px solid var(--color-border)
 <footer class="keaiui-web-footer">
 <span>Open to full-time roles · <a class="txt" href="mailto:b@merriman.xyz">b@merriman.xyz</a></span>
 <nav class="footer-links" aria-label="Résumé and profile">
-  <a class="txt" href="resume.pdf" download="Brian_Merriman_Resume.pdf">résumé PDF</a>
+  <a class="txt" href="resume.pdf" download="Brian_Merriman_Resume.pdf">Résumé PDF</a>
   <a class="txt" href="resume.docx" download="Brian_Merriman_Resume.docx">DOCX</a>
-  <a class="txt" href="resume.html">full résumé</a>
-  <a class="txt" href="https://github.com/merriman-xyz">github</a>
+  <a class="txt" href="resume.html">Full résumé</a>
+  <a class="txt" href="https://github.com/merriman-xyz">GitHub</a>
 </nav>
 </footer>
 </div>
