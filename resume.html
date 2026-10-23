@@ -12,27 +12,40 @@
 body{background:#fff;color:#111;margin:0;font:16px/1.45 Arial,Helvetica,sans-serif}
 main{max-width:47rem;margin:0 auto;padding:2rem 1.6rem}
 h1{font-size:32px;line-height:1.1;margin:0 0 2px}
-.target{font-size:16px;font-weight:700;margin:0 0 3px}
+.target{font-size:16px;font-weight:400;margin:0 0 3px}
 .contact{font-size:14px;margin:0}
 a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 a:hover{text-decoration-thickness:2px}
 h2{font-size:16px;line-height:1.1;text-transform:uppercase;margin:16px 0 5px}
 h3{font-size:16px;line-height:1.25;margin:8px 0 0}
+.role-line{margin:0 0 2px}
+.entry-meta{font-weight:400;color:#333}
+.entry-context{margin:1px 0 0}
+article + article{margin-top:10px}
 .meta{font-size:14px;margin:0 0 2px}
 .summary{margin:5px 0 0}
-.skills p{margin:1px 0}
+.skills p{display:flex;gap:.6em;margin:1px 0}
+.skills strong{flex:0 0 8.5em}
+.skills span{flex:1;min-width:0}
 ul{margin:2px 0 0;padding-left:18px}
 li{margin:0 0 2px;padding-left:1px}
 .education p{margin:0}
+@media screen and (max-width:600px){
+  .skills p{flex-direction:column;gap:2px;margin-bottom:6px}
+  .skills strong{flex-basis:auto}
+}
 @media print{
   body{font-size:10pt;line-height:1.2}
   main{max-width:none;padding:0}
   h1{font-size:20pt}
   .target{font-size:10pt}
   .contact,.meta{font-size:10pt}
-  h2{font-size:11pt;margin:6pt 0 2pt}
-  h3{font-size:10pt;margin:3.5pt 0 0}
+  h2{font-size:11pt;margin:8pt 0 3pt}
+  article + article{margin-top:7pt}
+  h3{font-size:10pt;margin:3pt 0 0}
   .summary{margin-top:4pt}
+  .skills p{gap:8pt}
+  .skills strong{flex-basis:80pt}
   li{margin-bottom:.8pt}
   .education{break-inside:avoid}
   a{text-decoration:none!important}
@@ -44,57 +57,50 @@ li{margin:0 0 2px;padding-left:1px}
 <main>
 <div class="contact-info">
   <h1>Brian Merriman</h1>
-  <p class="target">Senior Frontend Engineer | Frontend Software Engineer | Complex Data Applications</p>
-  <p class="contact">NYC area | <a href="mailto:merriman.bt@gmail.com">merriman.bt@gmail.com</a> | <a href="tel:+19148886931">914-888-6931</a><br><a href="https://merriman.xyz">https://merriman.xyz</a> | <a href="https://github.com/merriman-xyz">https://github.com/merriman-xyz</a></p>
+  <p class="target">Senior Frontend Engineer | Complex Data Applications</p>
+  <p class="contact">NYC area | <a href="mailto:merriman.bt@gmail.com">merriman.bt@gmail.com</a> | <a href="tel:+19148886931">914-888-6931</a><br>Website: <a href="https://merriman.xyz">merriman.xyz</a></p>
 </div>
 
 <section>
 <h2>Professional Summary</h2>
-<p class="summary">Senior frontend engineer building JavaScript applications for complex data and operational workflows. Primary frontend engineer during the first year of a JPMorgan Chase analytics workspace for large data sets; promoted to Lead Software Engineer (Vice President) after two years. Now building local-first software. Available now for full-time frontend roles in the US or Europe, on-site, hybrid, or remote.</p>
+<p class="summary">Senior frontend engineer building JavaScript applications for data analysis and business operations. Former Lead Software Engineer (Vice President) at JPMorgan Chase. Now building local-first software. Available now for full-time frontend roles in the US or Europe, on-site, hybrid, or remote.</p>
 </section>
 
 <section class="skills">
 <h2>Skills</h2>
-<p><strong>Programming:</strong> JavaScript (ES6+), SQL, HTML5, CSS3</p>
-<p><strong>Frontend:</strong> React, vanilla JavaScript, data visualization, frontend architecture, virtualized rendering, web performance optimization, state management, client-side caching</p>
-<p><strong>Data and Backend:</strong> Node.js, SQLite, IndexedDB, Dexie, REST API integration, WebSockets, local-first synchronization, data modeling</p>
-<p><strong>Engineering:</strong> Git, deployment</p>
+<p><strong>Frontend:</strong> <span>JavaScript (ES6+), React, HTML, CSS, data visualization, virtualized rendering</span></p>
+<p><strong>Data &amp; Tools:</strong> <span>Node.js, SQL, SQLite, IndexedDB (Dexie), REST APIs, WebSockets, Git</span></p>
+<p><strong>AI Development:</strong> <span>Agentic software development, reusable project instructions, independent review</span></p>
 </section>
 
 <section>
 <h2>Work Experience</h2>
 
 <article>
-<h3>JPMorgan Chase | Lead Software Engineer (Vice President)</h3>
-<p class="meta">New York, NY | February 2025 - May 2026</p>
+<h3>JPMorgan Chase <span class="entry-meta">| New York, NY | January 2023 - May 2026</span></h3>
+<p class="role-line">Lead Software Engineer (Vice President) | February 2025 - May 2026</p>
+<p class="role-line">Software Engineer III (Associate) | January 2023 - January 2025</p>
 <ul>
-<li>Promoted from Software Engineer III (Associate) to Lead Software Engineer (Vice President) in two years.</li>
-<li>Evaluated large language model (LLM) workflows for legacy application modernization and created reusable project guidance and user interface (UI) component constraints for AI-generated code.</li>
+<li>Built a multi-grid analytics workspace for large data sets. Served as its primary frontend engineer in the first year and continued to improve it.</li>
+<li>Built a React shell around a vanilla JavaScript grid core with virtualized rendering. Added tools to visualize, explore, join, and pivot data.</li>
+<li>Built on-demand data loading and client-side caching for large, server-backed grids.</li>
+<li>Helped introduce AI-assisted development for the analytics workspace. Guided coding agents with reusable project instructions and UI component standards.</li>
 </ul>
 </article>
 
 <article>
-<h3>JPMorgan Chase | Software Engineer III (Associate)</h3>
-<p class="meta">New York, NY | January 2023 - January 2025</p>
+<h3>OKG Tech <span class="entry-meta">| Monsey, NY</span></h3>
+<p class="role-line">Software Engineer | March 2022 - December 2022</p>
 <ul>
-<li>Served as primary frontend engineer during the product&rsquo;s first year, building a high-performance multi-grid analytics workspace on a small, fast-moving team.</li>
-<li>Enabled users to explore, join, pivot, and retrieve large server-held data sets.</li>
-<li>Implemented virtualized rendering, visible-window data fetching over WebSockets, client-side caching, and state management to keep every grid responsive.</li>
+<li>Updated a bus-ticketing system for a health center.</li>
+<li>Built a scheduling system for the same health center, with a React frontend and Node.js backend.</li>
+<li>Contributed improvements across several other projects.</li>
 </ul>
 </article>
 
 <article>
-<h3>OKG Tech | Software Engineer</h3>
-<p class="meta">New York, NY | March 2022 - December 2022</p>
-<ul>
-<li>Primary implementation engineer on a four-person team, developing an updated bus-ticketing system in React and Node.js.</li>
-<li>Developed scheduling, vaccination, appointment-reminder, and clinical-workflow features against eClinicalWorks and existing operational systems.</li>
-</ul>
-</article>
-
-<article>
-<h3>Yunshang Tea | Co-Founder</h3>
-<p class="meta">Zhejiang, China | September 2015 - November 2021</p>
+<h3>Yunshang Tea <span class="entry-meta">| Zhejiang, China</span></h3>
+<p class="role-line">Co-Founder | September 2015 - November 2021</p>
 <ul>
 <li>Managed retail and wholesale operations for a specialty tea business.</li>
 <li>Built database workflows for inventory, sales, and business operations.</li>
@@ -104,16 +110,26 @@ li{margin:0 0 2px;padding-left:1px}
 
 <section>
 <h2>Selected Projects</h2>
+<article class="project">
+<h3><a href="https://ingrid.tanji.systems">Ingrid</a> (2026)</h3>
 <ul>
-<li><strong><a href="https://ingrid.tanji.systems">Ingrid</a> (2026):</strong> Built a local-first hierarchical grid application using JavaScript, IndexedDB, and Dexie for client-side persistence, with production cloud synchronization and subscription billing.</li>
-<li><strong><a href="https://showdown.tanji.systems">Showdown Elo</a> (2026):</strong> Built an automated nightly Major League Baseball (MLB) ratings publication using Elo to rate hitters and pitchers from plate appearances.</li>
+<li>Shipped a local-first grid app with a React shell and vanilla JavaScript editor core. Added virtualized rendering, multi-device sync, and subscription billing.</li>
+<li>Directed development of an AI editing prototype within Ingrid. It previews changes to selected content before applying them and supports undo and redo.</li>
 </ul>
+</article>
+<article class="project">
+<h3><a href="https://showdown.tanji.systems">Showdown Elo</a> (2026)</h3>
+<ul>
+<li>Built an automated nightly Major League Baseball (MLB) ratings site. It rates hitters and pitchers from plate appearances using Elo.</li>
+</ul>
+</article>
 </section>
 
 <section class="education">
 <h2>Education</h2>
-<h3>Manhattan College | Bachelor of Arts (BA) in Computer Science</h3>
-<p class="meta">Bronx, NY | Magna cum laude | Phi Beta Kappa</p>
+<h3>Manhattan College</h3>
+<p>Bachelor of Arts (BA) in Computer Science</p>
+<p class="meta">Bronx, NY | magna cum laude | Phi Beta Kappa</p>
 </section>
 </main>
 </body>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brian Merriman — Senior Frontend Engineer</title>
-<meta name="description" content="Senior frontend engineer for complex-data applications. Former JPMorgan Chase lead software engineer and Vice President, with selected independent software projects. Open to full-time roles.">
+<meta name="description" content="Senior frontend engineer for complex-data applications. Former Lead Software Engineer (Vice President) at JPMorgan Chase, with selected independent software projects. Open to full-time roles.">
 <meta property="og:title" content="Brian Merriman — Senior Frontend Engineer">
 <meta property="og:description" content="Senior frontend engineer for complex-data applications, based in the NYC area. Open to full-time roles in the US or Europe.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -46,11 +46,17 @@ h3{margin:0;color:var(--color-text-strong);font:600 var(--text-size-web-subheadi
 .work-entry ul,.experience-entry ul{margin:var(--space-4) 0 0;padding-left:1.2em}
 .work-entry li,.experience-entry li{margin:0 0 var(--space-4)}
 .work-entry li:last-child,.experience-entry li:last-child{margin-bottom:0}
-.skills p{margin:0 0 var(--space-5)}
+.skills p{display:flex;gap:var(--space-4);margin:0 0 var(--space-5)}
+.skills strong{flex:0 0 8.5em}
+.skills span{flex:1;min-width:0}
 .skills p:last-child{margin-bottom:0}
 footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
   color:var(--color-text-muted);font-size:var(--text-size-web-body)}
 .footer-links{gap:var(--space-6)}
+@media (max-width:600px){
+  .skills p{flex-direction:column;gap:var(--space-2)}
+  .skills strong{flex-basis:auto}
+}
 @media (max-width:480px){
   body{padding-inline:12px}
   .site-header{padding-block:var(--space-7)}
@@ -73,7 +79,6 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
     <a class="keaiui-web-action keaiui-web-action-primary" href="mailto:merriman.bt@gmail.com">Email Brian</a>
     <a href="resume.html">Full résumé</a>
     <a href="resume.pdf" download="Brian_Merriman_Resume.pdf">PDF</a>
-    <a href="https://github.com/merriman-xyz">GitHub</a>
     <a href="https://tanji.systems/">Tanji Systems</a>
   </nav>
 </header>
@@ -84,13 +89,14 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
   <article class="work-entry">
     <h3><a href="https://ingrid.tanji.systems">Ingrid</a></h3>
     <ul>
-      <li>Built a local-first hierarchical grid application with client-side persistence, production cloud synchronization, and subscription billing</li>
+      <li>Shipped a local-first grid app with a React shell and vanilla JavaScript editor core. Added virtualized rendering, multi-device sync, and subscription billing</li>
+      <li>Directed development of an AI editing prototype within Ingrid. It previews changes to selected content before applying them and supports undo and redo</li>
     </ul>
   </article>
   <article class="work-entry">
     <h3><a href="https://showdown.tanji.systems">Showdown Elo</a></h3>
     <ul>
-      <li>Built an automated nightly MLB ratings publication using Elo to rate hitters and pitchers from plate appearances</li>
+      <li>Built an automated nightly MLB ratings site. It rates hitters and pitchers from plate appearances using Elo</li>
     </ul>
   </article>
 </section>
@@ -105,21 +111,22 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
       <div><dt>Software Engineer III (Associate)</dt><dd>January 2023–January 2025</dd></div>
     </dl>
     <ul>
-      <li>Built a multi-grid analytics workspace for users to explore, join, pivot, and retrieve large server-held data sets</li>
-      <li>Virtualized rendering with visible-window data fetching over WebSockets, client-side caching, and state management</li>
-      <li>Primary frontend engineer during the application&rsquo;s first year</li>
-      <li>Evaluated LLM workflows; created reusable project guidance and UI component constraints for AI-generated code</li>
+      <li>Built a multi-grid analytics workspace for large data sets. Served as its primary frontend engineer in the first year and continued to improve it</li>
+      <li>Built a React shell around a vanilla JavaScript grid core with virtualized rendering. Added tools to visualize, explore, join, and pivot data</li>
+      <li>Built on-demand data loading and client-side caching for large, server-backed grids</li>
+      <li>Helped introduce AI-assisted development for the analytics workspace. Guided coding agents with reusable project instructions and UI component standards</li>
     </ul>
   </article>
   <article class="experience-entry">
     <h3>OKG Tech</h3>
-    <p class="job-meta">New York</p>
+    <p class="job-meta">Monsey, NY</p>
     <dl class="job-roles">
       <div><dt>Software Engineer</dt><dd>March–December 2022</dd></div>
     </dl>
     <ul>
-      <li>Primary implementation engineer on an updated bus-ticketing system (React, Node.js) — four-person team</li>
-      <li>Developed scheduling, vaccination, appointment reminder, and clinical workflow features integrated with eClinicalWorks and existing operational systems</li>
+      <li>Updated a bus-ticketing system for a health center</li>
+      <li>Built a scheduling system for the same health center, with a React frontend and Node.js backend</li>
+      <li>Contributed improvements across several other projects</li>
     </ul>
   </article>
   <article class="experience-entry">
@@ -136,10 +143,10 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
 </section>
 
 <section class="skills" aria-labelledby="skills-heading">
-  <h2 id="skills-heading">Skills</h2>
-  <p><strong>Frontend:</strong> JavaScript, React, HTML, CSS, data visualization, virtualized rendering, web performance, state management, and client-side caching.</p>
-  <p><strong>Data and backend:</strong> SQL, Node.js, SQLite, IndexedDB, Dexie, REST APIs, WebSockets, local-first synchronization, and data modeling.</p>
-  <p><strong>Engineering:</strong> Git and deployment.</p>
+<h2 id="skills-heading">Skills</h2>
+<p><strong>Frontend:</strong> <span>JavaScript (ES6+), React, HTML, CSS, data visualization, virtualized rendering</span></p>
+<p><strong>Data &amp; Tools:</strong> <span>Node.js, SQL, SQLite, IndexedDB (Dexie), REST APIs, WebSockets, Git</span></p>
+<p><strong>AI Development:</strong> <span>Agentic software development, reusable project instructions, independent review</span></p>
 </section>
 
 <section aria-labelledby="education-heading">
