@@ -38,7 +38,7 @@ function show_artwork(index) {
   retry.hidden = true
   stage.setAttribute('aria-busy', 'true')
   const image = new Image()
-  image.alt = link.querySelector('img').alt
+  image.alt = link.querySelector('img')?.alt ?? link.dataset.alt ?? ''
   image.onload = () => {
     if (request_version !== version) return
     message.textContent = ''
