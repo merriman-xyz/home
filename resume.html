@@ -51,10 +51,16 @@ li::marker{color:var(--accent-soft)}
 .skills dt::after{content:':'}
 .skills dd{display:inline;margin:0 0 0 .3em}
 .education p{margin:0}
+@media screen and (min-width:721px){
+  header{display:grid;grid-template-columns:minmax(0,1fr) auto}
+}
+@media screen and (max-width:720px){
+  header{display:block}
+  .contact{margin-top:.5rem;text-align:left}
+}
 @media screen and (max-width:600px){
   main{padding-top:2rem}
   h1{font-size:1.9rem}
-  .contact{text-align:left}
 }
 @media print{
   body{font-size:9.3pt;line-height:1.3}
