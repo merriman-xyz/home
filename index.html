@@ -4,9 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brian Merriman — Senior Frontend Engineer</title>
-<meta name="description" content="Senior frontend engineer for complex-data applications. Former Lead Software Engineer (Vice President) at JPMorgan Chase, with selected independent software projects. Open to full-time roles.">
+<meta name="description" content="Senior frontend engineer for interactive web applications, based in the NYC area. Former Lead Software Engineer (Vice President) at JPMorgan Chase. Open to full-time roles in the US or Europe.">
+<link rel="canonical" href="https://merriman.xyz/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://merriman.xyz/">
 <meta property="og:title" content="Brian Merriman — Senior Frontend Engineer">
-<meta property="og:description" content="Senior frontend engineer for complex-data applications, based in the NYC area. Open to full-time roles in the US or Europe.">
+<meta property="og:description" content="Senior frontend engineer for interactive web applications, based in the NYC area. Former Lead Software Engineer (Vice President) at JPMorgan Chase. Open to full-time roles in the US or Europe.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="stylesheet" href="https://tanji.systems/fonts/fonts.css">
@@ -32,28 +35,38 @@ footer a[href^="tel:"]{white-space:nowrap}
 main section{padding:var(--space-7) 0}
 main section + section{border-top:1px solid var(--color-border)}
 section[aria-labelledby="work-heading"]{padding-inline:var(--space-6);background:var(--color-accent-tint)}
-h2{margin:0 0 var(--space-5);color:var(--color-text-strong);font:600 var(--text-size-web-heading)/1.25 var(--font-serif)}
+/* Type as on the Ingrid site (Brian, 2026-11-12: it feels best): section
+   headings 21.9px bold serif, entry titles 18.4px bold serif, text 18.4px,
+   meta lines (locations, dates, Role and Built with) 15px. */
+h2{margin:0 0 var(--space-5);color:var(--color-text-strong);font:700 var(--text-size-web-heading)/1.3 var(--font-serif)}
 .work-entry + .work-entry{margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid var(--color-border)}
 .experience-entry + .experience-entry{margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid var(--color-border)}
-h3{margin:0;color:var(--color-text-strong);font:600 var(--text-size-web-subheading)/1.3 var(--font-serif)}
+h3{margin:0;color:var(--color-text-strong);font:700 var(--text-size-web-subheading)/1.3 var(--font-serif)}
 .job-meta{margin:var(--space-2) 0 0;color:var(--color-text-muted);font-size:var(--text-size-web-body)}
 .job-progression{margin:var(--space-4) 0 0;color:var(--color-text-strong);font-size:var(--text-size-web-body)}
-.job-roles{margin:var(--space-5) 0 0;font-size:var(--text-size-web-body)}
+.job-roles{margin:var(--space-5) 0 0;font-size:var(--text-size-web-body);line-height:1.6}
 .job-roles > div{display:flex;flex-wrap:wrap;justify-content:space-between;column-gap:var(--space-6);row-gap:var(--space-1)}
 .job-roles > div + div{margin-top:var(--space-4)}
 .job-roles dt{flex:1 1 20rem;font-weight:600;color:var(--color-text-strong)}
 .job-roles dd{margin:0;color:var(--color-text-muted)}
-.work-entry ul,.experience-entry ul{margin:var(--space-4) 0 0;padding-left:1.2em}
+.work-entry ul,.experience-entry ul{margin:var(--space-5) 0 0;padding-left:1.2em}
+strong{font-weight:600}
 .work-entry li,.experience-entry li{margin:0 0 var(--space-4)}
 .work-entry li:last-child,.experience-entry li:last-child{margin-bottom:0}
 /* A product's canonical mark beside its live name (docs/brand/README.md
    lockup geometry): marks in green, the link's colour, sized per mark. */
-.work-lockup{display:inline-flex;align-items:center;gap:.23em}
-.work-lockup-ingrid{gap:.3em}
-.work-mark{display:inline-grid;place-items:center;flex:none;width:.77em;height:.77em}
-.work-mark-elo{width:.9em;height:.9em}
-.skills p{display:flex;gap:var(--space-4);margin:0 0 var(--space-5)}
-.skills strong{flex:0 0 5em}
+.work-lockup{display:inline-flex;align-items:center;gap:.35em}
+/* Every mark sits in one 1.25em column, drawn in proportion to the others
+   (⌗ and ⌸ .77em, 云 .82em as ※, ◆ .9em), so all four names start at one
+   line; its description sits indented under the name (1.6em of the
+   title's size). */
+.work-mark{box-sizing:border-box;display:block;flex:none;width:1.25em;height:1.25em}
+.work-mark-ingrid,.work-mark-anyi{padding:.09em}
+.work-mark-yunshang{padding:.055em}
+.work-lede,.work-role{margin:var(--space-4) 0 0 calc(1.6 * var(--text-size-web-subheading))}
+.work-role{margin-top:var(--space-2)}
+.skills p{display:flex;gap:var(--space-5);margin:0 0 var(--space-3)}
+.skills strong{flex:0 0 6.5rem}
 .skills span{flex:1;min-width:0}
 .skills p:last-child{margin-bottom:0}
 footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
@@ -69,7 +82,8 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
   .primary-links,.footer-links{column-gap:16px;row-gap:0}
   .primary-links a:not(.keaiui-web-action),.footer-links a{min-height:44px}
   .work-entry h3 a{display:inline-flex;align-items:center;min-height:44px}
-  .job-meta,footer{font-size:var(--text-size-web-body)}
+  footer span a{display:inline-flex;align-items:center;min-height:44px}
+  .work-entry h3 a{margin-block:-8px}
 }
 </style>
 </head>
@@ -79,12 +93,13 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
 <header class="site-header">
   <h1>Brian Merriman</h1>
   <p class="role">Senior frontend engineer · NYC area</p>
-  <p class="intro">I build compact interfaces for complex data. At JPMorgan Chase, I worked on a multi-grid analytics workspace for large data sets. I now build Ingrid at Tanji Systems.</p>
-  <p class="availability"><strong>Available now.</strong> Open to full-time frontend roles in the US or Europe, on-site, hybrid, or remote.</p>
+  <p class="intro">I build and improve interactive web applications, from complex data interfaces to everyday business workflows. At JPMorgan Chase, I worked on a multi-grid analytics workspace for large data sets. I now build Ingrid and Anyi Data at Tanji Systems.</p>
+  <p class="availability"><strong>Available now.</strong> Open to full-time roles in the US or Europe, on-site, hybrid, or remote.</p>
   <nav class="primary-links keaiui-web-nav" aria-label="Contact and profile">
     <a class="keaiui-web-action keaiui-web-action-primary" href="mailto:merriman.bt@gmail.com">Email Brian</a>
     <a href="resume.html">Full résumé</a>
     <a href="resume.pdf" download="Brian_Merriman_Resume.pdf">PDF</a>
+    <a href="https://github.com/merriman-xyz">GitHub</a>
     <a href="https://tanji.systems/">Tanji Systems</a>
   </nav>
 </header>
@@ -94,39 +109,22 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
   <h2 id="work-heading">Selected work</h2>
   <article class="work-entry">
     <h3><a class="work-lockup work-lockup-ingrid" href="https://ingrid.tanji.systems"><svg class="work-mark work-mark-ingrid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true" focusable="false" fill="currentColor"><path d="M30.617 101.985L30.617 83.703L83.703 83.703L83.703 30.617L101.984 30.617L101.984 83.703L154.015 83.703L154.015 30.617L172.297 30.617L172.297 83.703L225.383 83.703L225.383 101.985L172.297 101.985L172.297 154.016L225.383 154.016L225.383 172.297L172.297 172.297L172.297 225.383L154.015 225.383L154.015 172.297L101.984 172.297L101.984 225.383L83.703 225.383L83.703 172.297L30.617 172.297L30.617 154.016L83.703 154.016L83.703 101.985ZM101.984 154.016L154.015 154.016L154.015 101.985L101.984 101.985Z"/></svg><span>Ingrid</span></a></h3>
-    <ul>
-      <li>A local-first app for thinking in nested grids: any tile can hold a grid of its own, so a reading list holds each book’s notes, and a note its details</li>
-      <li>Mixes text, to-dos, images, audio and code in one grid, and keeps several grids and views open together in tabs and panes</li>
-      <li>Saves in the browser and works offline with no account, with optional multi-device sync and subscription billing. The Desktop app keeps each grid in a SQLite file that coding agents can edit directly</li>
-      <li>Directed development of an AI editing prototype within Ingrid. Users can preview AI-generated edits before applying them, then undo or redo changes</li>
-      <li>Built Ingrid’s original codebase and subsequently extended it through AI-assisted development: a React shell around a vanilla JavaScript editor core</li>
-    </ul>
+    <p class="work-lede"><strong>A local-first grid of grids for structured thinking.</strong> Any tile can hold a grid of its own: text, to-dos, images, audio and code side by side. It works offline with no account, with optional multi-device sync.</p>
+    <p class="work-role">I built the original editor, then extended it through AI-assisted development with multi-device sync and subscription billing.</p>
   </article>
   <article class="work-entry">
     <h3><a class="work-lockup work-lockup-anyi" href="https://anyi.tanji.systems"><svg class="work-mark work-mark-anyi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true" focusable="false" fill="currentColor"><path fill-rule="evenodd" d="M30.62 30.62H225.38V225.38H30.62ZM48.9 48.9H207.1V207.1H48.9ZM83.7 92.86H172.3V111.14H83.7ZM83.7 144.86H172.3V163.14H83.7Z"/></svg><span>Anyi Data</span></a></h3>
-    <ul>
-      <li>A local analytics workbench for large data sets. Open your own files or a public dataset, then group, pivot, filter and sort millions of rows in the browser; nothing is uploaded</li>
-      <li>Imports CSV, TSV, JSON, JSON Lines, Arrow and Parquet. Parquet of any size is queried in place, read from disk as needed</li>
-      <li>Each analysis opens in a tab of its own to compare side by side, with saved views and CSV export. Optional AI questions send column names and types, never rows, and open the answer as a new analysis</li>
-      <li>Directing AI-assisted development: a React shell around a vanilla JavaScript virtualized grid, with DuckDB-WASM running filters, groups and pivots as SQL</li>
-    </ul>
+    <p class="work-lede"><strong>A local analytics workbench for large data.</strong> Pivot, filter and sort millions of rows in the browser, from your own CSV, JSON, Arrow or Parquet files or sixteen public datasets. Your rows stay on your computer.</p>
+    <p class="work-role">I direct its development and make the product and design decisions, using AI coding agents to build a virtualized JavaScript grid over DuckDB-WASM.</p>
   </article>
   <article class="work-entry">
     <h3><a class="work-lockup work-lockup-elo" href="https://showdown.tanji.systems"><svg class="work-mark work-mark-elo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true" focusable="false" fill="currentColor"><path d="M128.000 31.100L30.800 128.100L128.000 224.900L225.200 128.100Z"/></svg><span>Showdown Elo</span></a></h3>
-    <ul>
-      <li>An MLB ratings site that rates every hitter and pitcher from plate appearances using Elo, updated nightly during the season</li>
-      <li>Career and season ratings since 2015, the first Statcast season, with player search, rankings, recent movers and historical comparisons</li>
-      <li>Built the automated pipeline: Python over MLB Statcast data, published as a static site by scheduled GitHub workflows</li>
-    </ul>
+    <p class="work-lede"><strong>MLB player ratings from regular-season plate appearances.</strong> Rebuilt nightly during the season, with career and season ratings since 2015, player search, rankings and recent movers.</p>
+    <p class="work-role">I built the automated ratings site and its nightly publication pipeline.</p>
   </article>
   <article class="work-entry">
-    <h3><a href="yunshang/">Yunshang Tea design</a></h3>
-    <ul>
-      <li>A shared visual language for a specialty tea brand in Zhejiang, co-designed with Huifang Yu</li>
-      <li>Packaging for three tea families, with boxes, tasting packs and calligraphic labels; product and festival posters; and retail signs built on a pale leaf motif</li>
-      <li>Mobile shop pages that carry the packaging into product, origin, tasting and brewing information</li>
-      <li>Production drawings for lids and labels, and design studies, on the portfolio’s Design notes page</li>
-    </ul>
+    <h3><a class="work-lockup work-lockup-yunshang" href="yunshang/"><svg class="work-mark work-mark-yunshang" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true" focusable="false" fill="currentColor"><path d="M201.802 114.508C212.180 114.508 221.405 114.969 230.400 115.892V89.369C222.097 90.292 214.717 90.753 201.571 90.753H54.429C41.283 90.753 33.903 90.292 25.600 89.369V115.892C34.364 114.969 41.975 114.508 54.198 114.508H96.404C84.872 140.108 75.186 157.175 58.811 181.622C53.045 188.310 47.510 191.539 37.823 193.614L44.281 220.137C54.429 218.523 58.119 218.061 69.420 217.139C107.474 214.602 122.234 213.218 145.528 209.989C169.514 206.991 179.892 205.377 192.346 202.840C196.497 210.450 198.342 213.910 205.953 228.209L229.016 214.832C209.874 180.468 195.805 159.481 173.204 130.883L151.294 141.723C165.132 159.712 171.359 168.245 179.431 181.160C162.364 184.389 138.840 187.849 126.616 188.771C98.018 191.077 98.018 191.077 79.106 192.692C88.562 179.315 94.328 170.782 103.323 155.330C112.548 139.416 113.470 137.341 124.771 114.508ZM210.105 27.791C202.494 28.714 195.114 29.175 181.737 29.175H75.877C63.654 29.175 55.351 28.714 47.510 27.791V54.083C55.582 53.160 61.578 52.930 75.877 52.930H181.737C196.267 52.930 202.724 53.160 210.105 54.083Z"/></svg><span>Yunshang Tea Design</span></a></h3>
+    <p class="work-lede"><strong>A shared visual language for a specialty tea brand.</strong> For Yunshang Tea in Zhejiang, from its packaging to its mobile shop. Co-designed with Huifang Yu.</p>
   </article>
 </section>
 
@@ -140,7 +138,7 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
       <div><dt>Software Engineer III (Associate)</dt><dd>January 2023–January 2025</dd></div>
     </dl>
     <ul>
-      <li>Built and continued developing a multi-grid analytics workspace for large data sets, with a React shell around a vanilla JavaScript grid core. Primary frontend engineer in year one</li>
+      <li>Built and continued developing a multi-grid analytics workspace for large data sets, with a React shell around a vanilla JavaScript grid core. Primary frontend engineer in year one.</li>
       <li>Designed and built charting and data-manipulation interfaces to explore, join, and pivot data across grids</li>
       <li>Kept large grids fast with virtualized rendering, on-demand loading of visible data over WebSockets, and client-side caching</li>
       <li>Helped introduce AI-assisted development for the workspace. Guided coding agents with reusable project instructions and UI component standards</li>
@@ -155,7 +153,6 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
     <ul>
       <li>Updated a bus-ticketing system for a health center, with a React frontend and Node.js backend</li>
       <li>Built a scheduling system for the same health center, also in React and Node.js</li>
-      <li>Contributed improvements across several other projects</li>
     </ul>
   </article>
   <article class="experience-entry">
@@ -175,7 +172,7 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
 <section class="skills" aria-labelledby="skills-heading">
 <h2 id="skills-heading">Skills</h2>
 <p><strong>Frontend:</strong> <span>JavaScript, React, HTML/CSS, Tailwind CSS, virtualized rendering, rapid prototyping</span></p>
-<p><strong>UI/UX:</strong> <span>Design systems, component libraries, data visualization, UI/UX design</span></p>
+<p><strong>UI/UX:</strong> <span>Design systems, component libraries, data visualization, interaction design</span></p>
 <p><strong>Data:</strong> <span>SQL, SQLite, IndexedDB (Dexie), Node.js, REST APIs, WebSockets</span></p>
 <p><strong>Tools:</strong> <span>Git, GitHub, Vite, npm, Chrome DevTools</span></p>
 <p><strong>AI Dev:</strong> <span>Claude Code, Codex, agentic development, context engineering, guardrails</span></p>

@@ -3,84 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brian Merriman - Resume</title>
+<title>Brian Merriman — Résumé</title>
+<meta name="description" content="Résumé of Brian Merriman, senior frontend engineer for interactive web applications. Former Lead Software Engineer (Vice President) at JPMorgan Chase.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="stylesheet" href="https://tanji.systems/fonts/fonts.css">
 <style>
-:root{color-scheme:light}
+/* The résumé in the website's type: Plex Serif name and headings, Plex Sans
+   text in neutral ink, with light touches of the house green: the rule under
+   the name, the rules under section headings, bullet markers and links.
+   Green text is only ever a link (Butterick: colour on non-clickable text
+   can read as a link).
+   Dates sit right on each line. Real text and headings in reading order for
+   application systems; no synthesized small caps or ligatures, so the PDF's
+   text layer reads "Brian Merriman" and "first". */
+:root{color-scheme:light;--ink:#1c1a16;--strong:#12110e;--muted:#5b574f;--accent:#217346;--accent-soft:#9cc3a9;--rule:#cfcac0}
 *{box-sizing:border-box}
-body{background:#fff;color:#111;margin:0;font:16px/1.45 Arial,Helvetica,sans-serif}
-main{max-width:47rem;margin:0 auto;padding:2rem 1.6rem}
-h1{font-size:32px;line-height:1.1;margin:0 0 2px}
-.target{font-size:16px;font-weight:400;margin:0 0 3px}
-.contact{font-size:14px;margin:0}
-a{color:inherit;text-decoration:underline;text-underline-offset:2px}
-a:hover{text-decoration-thickness:2px}
-h2{font-size:16px;line-height:1.1;text-transform:uppercase;margin:16px 0 5px}
-h3{font-size:16px;line-height:1.25;margin:8px 0 0}
-.role-line{margin:0 0 2px}
-.entry-meta{font-weight:400;color:#333}
-.entry-context{margin:1px 0 0}
-article + article{margin-top:10px}
-.meta{font-size:14px;margin:0 0 2px}
-.summary{margin:5px 0 0}
-.skills p{display:flex;gap:.6em;margin:1px 0}
-.skills strong{flex:0 0 5em}
-.skills span{flex:1;min-width:0}
-ul{margin:2px 0 0;padding-left:18px}
-li{margin:0 0 2px;padding-left:1px}
+html{background:#fff}
+body{margin:0;color:var(--ink);font:16px/1.5 "IBM Plex Sans",Arial,Helvetica,sans-serif;font-variant-ligatures:none}
+main{max-width:48rem;margin:0 auto;padding:2.75rem 1.25rem 3rem}
+a{color:var(--accent);text-decoration:underline;text-decoration-color:var(--accent-soft);text-underline-offset:2px}
+a:hover{text-decoration-color:currentColor}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:.5rem 2rem;padding-bottom:.9rem;border-bottom:2px solid var(--accent)}
+h1{margin:0;color:var(--strong);font:600 2.25rem/1.1 "IBM Plex Serif",Georgia,serif}
+.target{margin:.3rem 0 0;color:var(--muted)}
+.contact{margin:0;text-align:right;color:var(--muted);font-size:.92rem;line-height:1.55}
+section{margin-top:1.35rem}
+h2{margin:0 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--accent-soft);color:var(--strong);font:600 1.2rem/1.25 "IBM Plex Serif",Georgia,serif}
+.summary{margin:0}
+article + article{margin-top:.9rem}
+/* Dates follow their title on the same line, not in a right-hand column:
+   PDF text extraction (and applicant-tracking parsers) read a column of
+   dates as a separate block, away from the roles they belong to. */
+.line{margin:0}
+.line .when{color:var(--muted);font-weight:400;font-variant-numeric:tabular-nums;white-space:nowrap}
+h3{margin:0;font-size:1.0625rem;line-height:1.4}
+h3 .org{font-weight:600;color:var(--strong)}
+h3 .where{font-weight:400;color:var(--muted)}
+.role{margin-top:.1rem}
+.role strong{font-weight:500;color:var(--ink)}
+ul{margin:.3rem 0 0;padding-left:1.15em}
+li{margin:.15rem 0 0}
+li::marker{color:var(--accent-soft)}
+.skills{margin:0}
+.skills div{margin:.1rem 0 0}
+.skills dt{display:inline;font-weight:600;color:var(--strong)}
+.skills dt::after{content:':'}
+.skills dd{display:inline;margin:0 0 0 .3em}
 .education p{margin:0}
 @media screen and (max-width:600px){
-  .skills p{flex-direction:column;gap:2px;margin-bottom:6px}
-  .skills strong{flex-basis:auto}
+  main{padding-top:2rem}
+  h1{font-size:1.9rem}
+  .contact{text-align:left}
 }
 @media print{
-  body{font-size:10pt;line-height:1.2}
+  body{font-size:9.3pt;line-height:1.3}
   main{max-width:none;padding:0}
-  h1{font-size:20pt}
-  .target{font-size:10pt}
-  .contact,.meta{font-size:10pt}
-  h2{font-size:11pt;margin:8pt 0 3pt}
-  article + article{margin-top:7pt}
-  h3{font-size:10pt;margin:3pt 0 0}
-  .summary{margin-top:4pt}
-  .skills p{display:block}
-  li{margin-bottom:.8pt}
+  header{padding-bottom:5pt;border-bottom-width:1.5pt}
+  h1{font-size:19pt}
+  .target{margin-top:1pt}
+  .contact{font-size:8.8pt;line-height:1.4}
+  section{margin-top:8pt}
+  h2{font-size:11.2pt;margin-bottom:3pt;padding-bottom:1.5pt}
+  article + article{margin-top:5pt}
+  h3{font-size:9.9pt}
+  .role{margin-top:0}
+  ul{margin-top:1.5pt}
+  li{margin-top:.5pt}
   .education{break-inside:avoid}
-  a{text-decoration:none!important}
-  @page{size:letter;margin:.5in .62in}
+  a{text-decoration:none}
+  @page{size:letter;margin:.5in .6in}
 }
 </style>
 </head>
 <body>
 <main>
-<div class="contact-info">
-  <h1>Brian Merriman</h1>
-  <p class="target">Senior Frontend Engineer | Complex Data Applications</p>
-  <p class="contact">NYC area | <a href="mailto:merriman.bt@gmail.com">merriman.bt@gmail.com</a> | <a href="tel:+19148886931">914-888-6931</a><br>Website: <a href="https://merriman.xyz">merriman.xyz</a></p>
-</div>
+<header>
+  <div>
+    <h1>Brian Merriman</h1>
+    <p class="target">Senior Frontend Engineer | Interactive Web Applications</p>
+  </div>
+  <p class="contact">NYC area<br><a href="mailto:merriman.bt@gmail.com">merriman.bt@gmail.com</a> · <a href="tel:+19148886931">914-888-6931</a><br><a href="https://merriman.xyz">merriman.xyz</a> · <a href="https://github.com/merriman-xyz">github.com/merriman-xyz</a></p>
+</header>
 
 <section>
 <h2>Professional Summary</h2>
-<p class="summary">Senior frontend engineer building JavaScript applications for data analysis and business operations. Former Lead Software Engineer (Vice President) at JPMorgan Chase. Now building local-first software. Available now for full-time frontend roles in the US or Europe, on-site, hybrid, or remote.</p>
-</section>
-
-<section class="skills">
-<h2>Skills</h2>
-<p><strong>Frontend:</strong> <span>JavaScript, React, HTML/CSS, Tailwind CSS, virtualized rendering, rapid prototyping</span></p>
-<p><strong>UI/UX:</strong> <span>Design systems, component libraries, data visualization, UI/UX design</span></p>
-<p><strong>Data:</strong> <span>SQL, SQLite, IndexedDB (Dexie), Node.js, REST APIs, WebSockets</span></p>
-<p><strong>Tools:</strong> <span>Git, GitHub, Vite, npm, Chrome DevTools</span></p>
-<p><strong>AI Dev:</strong> <span>Claude Code, Codex, agentic development, context engineering, guardrails</span></p>
+<p class="summary">Senior frontend engineer building and improving interactive web applications, from complex data interfaces to everyday business workflows. Former Lead Software Engineer (Vice President) at JPMorgan Chase. Available for full-time roles in the US or Europe, on-site, hybrid, or remote.</p>
 </section>
 
 <section>
 <h2>Work Experience</h2>
 
 <article>
-<h3>JPMorgan Chase <span class="entry-meta">| New York, NY | January 2023 - May 2026</span></h3>
-<p class="role-line">Lead Software Engineer (Vice President) | February 2025 - May 2026</p>
-<p class="role-line">Software Engineer III (Associate) | January 2023 - January 2025</p>
+<h3 class="line"><span><span class="org">JPMorgan Chase</span> <span class="where">· New York, NY</span></span></h3>
+<p class="line role"><strong>Lead Software Engineer (Vice President)</strong> <span class="when">· Feb 2025 – May 2026</span></p>
+<p class="line role"><strong>Software Engineer III (Associate)</strong> <span class="when">· Jan 2023 – Jan 2025</span></p>
 <ul>
 <li>Built and continued developing a multi-grid analytics workspace for large data sets, with a React shell around a vanilla JavaScript grid core. Primary frontend engineer in year one.</li>
 <li>Designed and built charting and data-manipulation interfaces to explore, join, and pivot data across grids.</li>
@@ -90,18 +107,17 @@ li{margin:0 0 2px;padding-left:1px}
 </article>
 
 <article>
-<h3>OKG Tech <span class="entry-meta">| Monsey, NY</span></h3>
-<p class="role-line">Software Engineer | March 2022 - December 2022</p>
+<h3 class="line"><span><span class="org">OKG Tech</span> <span class="where">· Monsey, NY</span></span></h3>
+<p class="line role"><strong>Software Engineer</strong> <span class="when">· Mar 2022 – Dec 2022</span></p>
 <ul>
 <li>Updated a bus-ticketing system for a health center, with a React frontend and Node.js backend.</li>
 <li>Built a scheduling system for the same health center, also in React and Node.js.</li>
-<li>Contributed improvements across several other projects.</li>
 </ul>
 </article>
 
 <article>
-<h3>Yunshang Tea <span class="entry-meta">| Zhejiang, China</span></h3>
-<p class="role-line">Co-Founder | September 2015 - November 2021</p>
+<h3 class="line"><span><span class="org">Yunshang Tea</span> <span class="where">· Zhejiang, China</span></span></h3>
+<p class="line role"><strong>Co-Founder</strong> <span class="when">· Sep 2015 – Nov 2021</span></p>
 <ul>
 <li>Managed retail and wholesale operations for a specialty tea business.</li>
 <li>Built database workflows for inventory, sales, and business operations.</li>
@@ -112,27 +128,36 @@ li{margin:0 0 2px;padding-left:1px}
 
 <section>
 <h2>Selected Projects</h2>
-<article class="project">
-<h3>Ingrid <span class="entry-meta">| 2026 | <a href="https://ingrid.tanji.systems">ingrid.tanji.systems</a></span></h3>
+<article>
+<h3 class="line"><span><span class="org">Ingrid</span> <span class="where">· <a href="https://ingrid.tanji.systems">ingrid.tanji.systems</a></span></span> <span class="when year">· 2026</span></h3>
 <ul>
 <li>Built a local-first grid app with a React shell and vanilla JavaScript editor core, then extended it through AI-assisted development with multi-device sync and subscription billing.</li>
-<li>Directed an AI editing prototype: users preview AI-generated edits before applying them, with undo and redo.</li>
 </ul>
 </article>
-<article class="project">
-<h3>Anyi Data <span class="entry-meta">| 2026 | <a href="https://anyi.tanji.systems">anyi.tanji.systems</a></span></h3>
+<article>
+<h3 class="line"><span><span class="org">Anyi Data</span> <span class="where">· <a href="https://anyi.tanji.systems">anyi.tanji.systems</a></span></span> <span class="when year">· 2026</span></h3>
 <ul>
-<li>A local analytics workbench that pivots, filters and sorts large data sets from your own files or public datasets in the browser, with nothing uploaded.</li>
+<li>A local analytics workbench that pivots, filters and sorts large data sets from your own files or public datasets in the browser; rows never leave the computer.</li>
 <li>Directing AI-assisted development: a vanilla JavaScript virtualized grid with DuckDB-WASM running pivots as SQL; optional AI questions send column metadata, never rows.</li>
 </ul>
 </article>
 </section>
 
+<section>
+<h2>Skills</h2>
+<dl class="skills">
+<div><dt>Frontend</dt><dd>JavaScript, React, HTML/CSS, Tailwind CSS, virtualized rendering, rapid prototyping</dd></div>
+<div><dt>UI/UX</dt><dd>Design systems, component libraries, data visualization, interaction design</dd></div>
+<div><dt>Data</dt><dd>SQL, SQLite, IndexedDB (Dexie), Node.js, REST APIs, WebSockets</dd></div>
+<div><dt>Tools</dt><dd>Git, GitHub, Vite, npm, Chrome DevTools</dd></div>
+<div><dt>AI Dev</dt><dd>Claude Code, Codex, agentic development, context engineering, guardrails</dd></div>
+</dl>
+</section>
+
 <section class="education">
 <h2>Education</h2>
-<h3>Manhattan College</h3>
-<p>Bachelor of Arts (BA) in Computer Science</p>
-<p class="meta">Bronx, NY | magna cum laude | Phi Beta Kappa</p>
+<h3 class="line"><span><span class="org">Manhattan College</span> <span class="where">· Bronx, NY</span></span></h3>
+<p>Bachelor of Arts (BA) in Computer Science · magna cum laude · Phi Beta Kappa</p>
 </section>
 </main>
 </body>
