@@ -46,6 +46,12 @@ h3{margin:0;color:var(--color-text-strong);font:600 var(--text-size-web-subheadi
 .work-entry ul,.experience-entry ul{margin:var(--space-4) 0 0;padding-left:1.2em}
 .work-entry li,.experience-entry li{margin:0 0 var(--space-4)}
 .work-entry li:last-child,.experience-entry li:last-child{margin-bottom:0}
+/* A product's canonical mark beside its live name (docs/brand/README.md
+   lockup geometry): marks in green, the link's colour, sized per mark. */
+.work-lockup{display:inline-flex;align-items:center;gap:.23em}
+.work-lockup-ingrid{gap:.3em}
+.work-mark{display:inline-grid;place-items:center;flex:none;width:.77em;height:.77em}
+.work-mark-elo{width:.9em;height:.9em}
 .skills p{display:flex;gap:var(--space-4);margin:0 0 var(--space-5)}
 .skills strong{flex:0 0 5em}
 .skills span{flex:1;min-width:0}
@@ -87,15 +93,17 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
 <section aria-labelledby="work-heading">
   <h2 id="work-heading">Selected work</h2>
   <article class="work-entry">
-    <h3><a href="https://ingrid.tanji.systems">Ingrid</a></h3>
+    <h3><a class="work-lockup work-lockup-ingrid" href="https://ingrid.tanji.systems"><svg class="work-mark work-mark-ingrid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true" focusable="false" fill="currentColor"><path d="M30.617 101.985L30.617 83.703L83.703 83.703L83.703 30.617L101.984 30.617L101.984 83.703L154.015 83.703L154.015 30.617L172.297 30.617L172.297 83.703L225.383 83.703L225.383 101.985L172.297 101.985L172.297 154.016L225.383 154.016L225.383 172.297L172.297 172.297L172.297 225.383L154.015 225.383L154.015 172.297L101.984 172.297L101.984 225.383L83.703 225.383L83.703 172.297L30.617 172.297L30.617 154.016L83.703 154.016L83.703 101.985ZM101.984 154.016L154.015 154.016L154.015 101.985L101.984 101.985Z"/></svg><span>Ingrid</span></a></h3>
     <ul>
-      <li>Built Ingrid’s original codebase and subsequently extended it through AI-assisted development.</li>
-      <li>Shipped a local-first grid app with a React shell and vanilla JavaScript editor core. Added multi-device sync and subscription billing</li>
-      <li>Directed development of an AI editing prototype within Ingrid. Users can preview AI-generated edits before applying them, then undo or redo changes.</li>
+      <li>A local-first app for thinking in nested grids: any tile can hold a grid of its own, so a reading list holds each book’s notes, and a note its details</li>
+      <li>Mixes text, to-dos, images, audio and code in one grid, and keeps several grids and views open together in tabs and panes</li>
+      <li>Saves in the browser and works offline with no account, with optional multi-device sync and subscription billing. The Desktop app keeps each grid in a SQLite file that coding agents can edit directly</li>
+      <li>Directed development of an AI editing prototype within Ingrid. Users can preview AI-generated edits before applying them, then undo or redo changes</li>
+      <li>Built Ingrid’s original codebase and subsequently extended it through AI-assisted development: a React shell around a vanilla JavaScript editor core</li>
     </ul>
   </article>
   <article class="work-entry">
-    <h3><a href="https://anyi.tanji.systems">Anyi Data</a></h3>
+    <h3><a class="work-lockup work-lockup-anyi" href="https://anyi.tanji.systems"><svg class="work-mark work-mark-anyi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true" focusable="false" fill="currentColor"><path fill-rule="evenodd" d="M30.62 30.62H225.38V225.38H30.62ZM48.9 48.9H207.1V207.1H48.9ZM83.7 92.86H172.3V111.14H83.7ZM83.7 144.86H172.3V163.14H83.7Z"/></svg><span>Anyi Data</span></a></h3>
     <ul>
       <li>A local analytics workbench for large data sets. Open your own files or a public dataset, then group, pivot, filter and sort millions of rows in the browser; nothing is uploaded</li>
       <li>Imports CSV, TSV, JSON, JSON Lines, Arrow and Parquet. Parquet of any size is queried in place, read from disk as needed</li>
@@ -104,15 +112,20 @@ footer{padding:var(--space-6) 0;border-top:1px solid var(--color-border-strong);
     </ul>
   </article>
   <article class="work-entry">
-    <h3><a href="https://showdown.tanji.systems">Showdown Elo</a></h3>
+    <h3><a class="work-lockup work-lockup-elo" href="https://showdown.tanji.systems"><svg class="work-mark work-mark-elo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true" focusable="false" fill="currentColor"><path d="M128.000 31.100L30.800 128.100L128.000 224.900L225.200 128.100Z"/></svg><span>Showdown Elo</span></a></h3>
     <ul>
-      <li>Built an automated nightly MLB ratings site. It rates hitters and pitchers from plate appearances using Elo</li>
+      <li>An MLB ratings site that rates every hitter and pitcher from plate appearances using Elo, updated nightly during the season</li>
+      <li>Career and season ratings since 2015, the first Statcast season, with player search, rankings, recent movers and historical comparisons</li>
+      <li>Built the automated pipeline: Python over MLB Statcast data, published as a static site by scheduled GitHub workflows</li>
     </ul>
   </article>
   <article class="work-entry">
     <h3><a href="yunshang/">Yunshang Tea design</a></h3>
     <ul>
-      <li>Designed a shared visual language for a specialty tea brand across packaging, posters, retail signs, and mobile shop pages, with Huifang Yu</li>
+      <li>A shared visual language for a specialty tea brand in Zhejiang, co-designed with Huifang Yu</li>
+      <li>Packaging for three tea families, with boxes, tasting packs and calligraphic labels; product and festival posters; and retail signs built on a pale leaf motif</li>
+      <li>Mobile shop pages that carry the packaging into product, origin, tasting and brewing information</li>
+      <li>Production drawings for lids and labels, and design studies, on the portfolio’s Design notes page</li>
     </ul>
   </article>
 </section>
